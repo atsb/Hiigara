@@ -1,0 +1,6 @@
+wrapped_functions.h: ../../../src/Game/functions.h \
+ /usr/include/stdc-predef.h ../../../src/Game/wrap_types.h \
+ ../../../src/Game/wrap.h
+/usr/include/stdc-predef.h:
+../../../src/Game/wrap_types.h:
+../../../src/Game/wrap.h:
