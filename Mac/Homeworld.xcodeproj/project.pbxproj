@@ -9,17 +9,13 @@
 /* Begin PBXBuildFile section */
 		1793E3DC23710C09006F67CB /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BD9227064AEE7A003E3D39 /* main.c */; };
 		1793E3DD23710C0A006F67CB /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 90BD9227064AEE7A003E3D39 /* main.c */; };
-		1793E3E62371F081006F67CB /* Homeworld.big in Resources */ = {isa = PBXBuildFile; fileRef = 1793E3E12371F080006F67CB /* Homeworld.big */; };
 		1793E3E72371F081006F67CB /* Homeworld.big in Resources */ = {isa = PBXBuildFile; fileRef = 1793E3E12371F080006F67CB /* Homeworld.big */; };
-		1793E3E82371F081006F67CB /* HW_Music.wxd in Resources */ = {isa = PBXBuildFile; fileRef = 1793E3E22371F080006F67CB /* HW_Music.wxd */; };
 		1793E3E92371F081006F67CB /* HW_Music.wxd in Resources */ = {isa = PBXBuildFile; fileRef = 1793E3E22371F080006F67CB /* HW_Music.wxd */; };
-		1793E3EA2371F081006F67CB /* Update.big in Resources */ = {isa = PBXBuildFile; fileRef = 1793E3E32371F081006F67CB /* Update.big */; };
 		1793E3EB2371F081006F67CB /* Update.big in Resources */ = {isa = PBXBuildFile; fileRef = 1793E3E32371F081006F67CB /* Update.big */; };
 		1793E3EC2371F081006F67CB /* HomeworldSDL.big in Resources */ = {isa = PBXBuildFile; fileRef = 1793E3E42371F081006F67CB /* HomeworldSDL.big */; };
 		1793E3ED2371F081006F67CB /* HomeworldSDL.big in Resources */ = {isa = PBXBuildFile; fileRef = 1793E3E42371F081006F67CB /* HomeworldSDL.big */; };
-		1793E3EE2371F081006F67CB /* HW_Comp.vce in Resources */ = {isa = PBXBuildFile; fileRef = 1793E3E52371F081006F67CB /* HW_Comp.vce */; };
 		1793E3EF2371F081006F67CB /* HW_Comp.vce in Resources */ = {isa = PBXBuildFile; fileRef = 1793E3E52371F081006F67CB /* HW_Comp.vce */; };
-		2AD6F8C529E8514C009B6324 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD6F8C429E85111009B6324 /* SDL2.framework */; };
+		2AB71EF129E8862700F1A3F1 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB71EF029E8862600F1A3F1 /* SDL2.framework */; };
 		2AD6F8C929E87101009B6324 /* TitanInterfaceC.stub.c in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6F8C829E87101009B6324 /* TitanInterfaceC.stub.c */; };
 		3507A51B0B0FA60200E374C5 /* Trails.c in Sources */ = {isa = PBXBuildFile; fileRef = 3507A5190B0FA60200E374C5 /* Trails.c */; };
 		3507A51D0B0FA60200E374C5 /* Trails.c in Sources */ = {isa = PBXBuildFile; fileRef = 3507A5190B0FA60200E374C5 /* Trails.c */; };
@@ -621,7 +617,7 @@
 		1793E3E32371F081006F67CB /* Update.big */ = {isa = PBXFileReference; lastKnownFileType = file; name = Update.big; path = ../Update.big; sourceTree = "<group>"; };
 		1793E3E42371F081006F67CB /* HomeworldSDL.big */ = {isa = PBXFileReference; lastKnownFileType = file; name = HomeworldSDL.big; path = ../HomeworldSDL.big; sourceTree = "<group>"; };
 		1793E3E52371F081006F67CB /* HW_Comp.vce */ = {isa = PBXFileReference; lastKnownFileType = file; name = HW_Comp.vce; path = ../HW_Comp.vce; sourceTree = "<group>"; };
-		2AD6F8C429E85111009B6324 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		2AB71EF029E8862600F1A3F1 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2.framework; sourceTree = "<group>"; };
 		2AD6F8C829E87101009B6324 /* TitanInterfaceC.stub.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TitanInterfaceC.stub.c; sourceTree = "<group>"; };
 		35017184077C54EA00684108 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/HomeworldPlist.strings; sourceTree = "<group>"; };
 		3507A5190B0FA60200E374C5 /* Trails.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = Trails.c; sourceTree = "<group>"; };
@@ -1218,9 +1214,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AD6F8C529E8514C009B6324 /* SDL2.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				35E8607713487BD10079E9AB /* OpenGL.framework in Frameworks */,
+				2AB71EF129E8862700F1A3F1 /* SDL2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1230,7 +1226,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2AD6F8C429E85111009B6324 /* SDL2.framework */,
+				2AB71EF029E8862600F1A3F1 /* SDL2.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				35E8607613487BD10079E9AB /* OpenGL.framework */,
 			);
@@ -1999,7 +1995,6 @@
 			buildPhases = (
 				355BE77707935BD200F82BB0 /* ShellScript */,
 				1793E3DE2371C0B2006F67CB /* ShellScript */,
-				1793E3E02371C316006F67CB /* ShellScript */,
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
@@ -2062,13 +2057,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1793E3E82371F081006F67CB /* HW_Music.wxd in Resources */,
 				35CCC930096625FD009D918D /* HomeworldPlist.strings in Resources */,
-				1793E3EE2371F081006F67CB /* HW_Comp.vce in Resources */,
-				1793E3EA2371F081006F67CB /* Update.big in Resources */,
 				35B1D7F00ABD43B0002214BE /* Homeworld.icns in Resources */,
 				1793E3EC2371F081006F67CB /* HomeworldSDL.big in Resources */,
-				1793E3E62371F081006F67CB /* Homeworld.big in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2091,23 +2082,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/sh\n#Compile HomeworldSDL.big into repo root\ncd ../tools/biggie\n./biggie-MacOSX-compile.sh\ncd ../../HomeworldSDL_big\n./convert_directory_to_big_file\n";
-		};
-		1793E3E02371C316006F67CB /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#download required resources to repo root\ncd ../\nif [ ! -e Homeworld.big ]; then\ncurl -L --output Homeworld.big 'https://drive.google.com/uc?id=1MYRzDQa95qqzQbK15VEgAJblzc4GXC_C&export=download'\nfi\nif [ ! -e HW_Comp.vce ]; then\ncurl -L --output HW_Comp.vce 'https://drive.google.com/uc?id=1cBSfugIM0i0FolAocv6sJuDFgJg0f43E&export=download'\nfi\nif [ ! -e HW_Music.wxd ]; then\ncurl -L --output HW_Music.wxd 'https://drive.google.com/uc?id=1tYdBSAMPQpRQuboplFPzT8VnBJtPUrII&export=download'\nfi\nif [ ! -e Update.big ]; then\ncurl -L --output Update.big 'https://drive.google.com/uc?id=1_JdtnsUUEt4-guveuTJkhxsPYzt6I4CD&export=download'\nfi\n";
 		};
 		3507D813079955A400F093F4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;

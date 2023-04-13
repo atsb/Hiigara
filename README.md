@@ -12,6 +12,16 @@ The Homeworld data is needed.  Either the latest 1.5 release or the remaster, bo
 Linux users, place the data in the same directory as your binary.
 macOS users, place the data in the 'Resources' directory inside the App Bundle.
 
+# Data files you need
+
+Homeworld.big
+HW_Comp.vce
+HW_Music.wxd
+Update.big
+
+Please also include the HomeworldSDL.big file where it is as this is needed for 64bit support.
+This file modifies the pointers from the Homeworld.big file that aren't 64bit clean (and cannot be since it is a proprietary commercial file).
+
 # Building
 
 Linux users should perform
@@ -26,6 +36,6 @@ macOS users should perform
 1. Open the provided xcode project
 2. Build the project
 
-NOTE: macOS users, I strongly advise you to have macports and to have sdl2 development libs installed in /opt/local/include and /opt/local/lib.  This is the location that is hardcoded in kas2c, biggie and in the xcode project.  Having a universal SDL2.framework in your Library/Frameworks directory is also a pre-requisite to building.
+NOTE: macOS users, I strongly advise you to have macports and to have sdl2 development libs installed in /opt/local/include and /opt/local/lib.  This is the location that is hardcoded in kas2c, biggie and in the xcode project.  A universal SDL2.framework is already provided in the Mac directory.
 
 Enjoy using Hiigara as much as I did porting it.
