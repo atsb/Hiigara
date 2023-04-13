@@ -237,7 +237,10 @@ void dbgFatalf(char *file, sdword line, char *format, ...)
     vsnprintf(message, DBG_BufferMax, format, argList);
     va_end(argList);
     
+// This smashes against some memory on macOS that actually causes a fatal error on skirmish
+#ifndef __APPLE__
     dbgFatal(file, line, message);
+#endif
 }
 
 /*-----------------------------------------------------------------------------

@@ -18,6 +18,7 @@ Homeworld.big
 HW_Comp.vce
 HW_Music.wxd
 Update.big
+Extra.big
 
 Please also include the HomeworldSDL.big file where it is as this is needed for 64bit support.
 This file modifies the pointers from the Homeworld.big file that aren't 64bit clean (and cannot be since it is a proprietary commercial file).
