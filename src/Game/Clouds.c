@@ -6,8 +6,12 @@
 //  Created 2/8/1998 by khent
 // =============================================================================
 
-#include "Clouds.h"
+#ifdef _WIN32
+#define _USE_MATH_DEFINES
+#include <math.h>
+#endif
 
+#include "Clouds.h"
 #include "AutoLOD.h"
 #include "Clipper.h"
 #include "devstats.h"
@@ -978,8 +982,14 @@ void cloudGenerateLightning(vector *from, vector *to) {
     }
 }
 
+// atsb - dirty hack for non constant expression on MSVC compilers -_-
+#ifdef _WIN32
+#define depth5 5
+#endif
+
 void cloudRenderLightning(vector* pa, vector* pb, udword depth, sdword lod) {
-    vector lightning[depth];
+
+    vector lightning[depth5];
     real32 width = 12.0f / (real32)(lod + 1);
     real32 alpha = width / 10.0f;
     if (width > 3.0f) alpha = 1.0f;

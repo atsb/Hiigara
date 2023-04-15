@@ -227,6 +227,59 @@ featom *feAtomFindInScreen(fescreen *screen, char *atomName)
     return(NULL);
 }
 
+#ifdef _WIN32
+//TRUE if running in software.  used by feShouldSaveMouseCursor() - don't check this directly
+bool feSavingMouseCursor;
+/*-----------------------------------------------------------------------------
+    Name        : feShouldSaveMouseCursor
+    Description : for deciding whether to save the mouse cursor, perform region
+                  dirtying, &c
+    Inputs      :
+    Outputs     :
+    Return      : >0 (yes) or 0 (no)
+----------------------------------------------------------------------------*/
+bool feShouldSaveMouseCursor(void)
+{
+    extern bool lmActive;
+    extern bool hrRunning;
+
+    if (hrRunning)
+    {
+        return feSavingMouseCursor;
+    }
+    if (feRenderEverything)
+    {
+        return FALSE;
+    }
+    //launch manager
+    if (lmActive)
+    {
+        return FALSE;
+    }
+    //titan picker
+/*    if (tpActive)
+    {
+        return FALSE;
+    }*/
+    //nis running
+    if (nisIsRunning)
+    {
+        return FALSE;
+    }
+    //sensors manager active (redundant)
+    if (smSensorsActive)
+    {
+        return FALSE;
+    }
+    //game running and not in a fullscreen gui
+    if (gameIsRunning && mrRenderMainScreen)
+    {
+        return FALSE;
+    }
+    return feSavingMouseCursor;
+}
+#endif
+
 /*-----------------------------------------------------------------------------
     Name        : feAtomFindNextInScreen
     Description : Find a atom in a particular screen which exists after this screen.

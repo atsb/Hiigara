@@ -22,8 +22,13 @@ typedef struct
 {
     char *name;
     setVarCback setVarCB;
+#ifdef _WIN32
+    int * offset1;     // should really be 1 offset, but I can't get rid of this strange compiler error
+    int * offset2;
+#else
     void * offset1;     // should really be 1 offset, but I can't get rid of this strange compiler error
     void * offset2;
+#endif
 } scriptStructEntry;
 
 typedef struct

@@ -1961,57 +1961,6 @@ void etgEffectCodeExecute(etgeffectstatic *stat, Effect *effect, udword codeBloc
 
 	//this function does not interface well with optimized code which assumes
 	//certain variables will not get stomped, hence the pushes
-#ifndef GENERIC_ETGCALLFUNCTION
-#if defined (_MSC_VER)
-	_asm
-	{
-		push eax
-		push ebx
-		push ecx
-		push edx
-		push esi
-		push edi
-	}
-#elif defined (__GNUC__) && defined (__i386__) && !defined (_MACOSX_86)
-	/* Using an array should guarantee it's in memory, right? */
-	Uint32 savedreg[6];
- 	__asm__ __volatile__ (
-		"movl %%eax, %0\n\t"
-		"movl %%ebx, %1\n\t"
-		"movl %%ecx, %2\n\t"
-		"movl %%edx, %3\n\t"
-		"movl %%esi, %4\n\t"
-		"movl %%edi, %5\n\t" : :
-		"m" (savedreg[0]), "m" (savedreg[1]), "m" (savedreg[2]),
-		"m" (savedreg[3]), "m" (savedreg[4]), "m" (savedreg[5]));
-#elif defined (__GNUC__) && defined (__x86_64__)
-	Uint64 savedreg[8];
- 	__asm__ __volatile__ (
-		"movq %%rax, %0\n\t"
-		"movq %%rbx, %1\n\t"
-		"movq %%rcx, %2\n\t"
-		"movq %%rdx, %3\n\t"
-		"movq %%rsi, %4\n\t"
-		"movq %%rdi, %5\n\t"
-		"movq %%r8,  %6\n\t"
-		"movq %%r9,  %7\n\t" : :
-		"m" (savedreg[0]), "m" (savedreg[1]), "m" (savedreg[2]),
-		"m" (savedreg[3]), "m" (savedreg[4]), "m" (savedreg[5]),
-		"m" (savedreg[6]), "m" (savedreg[7]));
-#elif !defined(_MACOSX)
-    // We know x86 instructions won't work on a PowerPC, thanks. We've coded around it.
-	#error Opcode-handler functions currently only supported on x86 platforms.
-#endif
-#endif
-/*
-#if ETG_ERROR_CHECKING
-    if (etgExecStackIndex >= ETG_ExecStackDepth - 1)
-    {
-        dbgFatalf(ETG, "Overflowed exec stack of depth %d", ETG_ExecStackDepth);
-    }
-#endif
-    etgExecStackIndex++;
-*/
 
     etgExecStack.etgCodeBlockIndex = codeBlock;
     //set the proper code block and code length
@@ -2045,45 +1994,6 @@ void etgEffectCodeExecute(etgeffectstatic *stat, Effect *effect, udword codeBloc
 //    etgExecStackIndex--;
 	//this function does not interface well with optimized code which assumes
 	//certain variables will not get stomped, hence the pushes
-#ifndef GENERIC_ETGCALLFUNCTION
-#if defined (_MSC_VER)
-	_asm
-	{
-		pop edi
-		pop esi
-		pop edx
-		pop ecx
-		pop ebx
-		pop eax
-	}
-#elif defined (__GNUC__) && defined (__i386__) && !defined (_MACOSX_86)
-	/* This is a problem on x86 macs, because OSX requires PIC compliant asm, and this clobbers ebx */
-	__asm__ __volatile__ (
-		"movl %0, %%eax\n\t"
-		"movl %1, %%ebx\n\t"
-		"movl %2, %%ecx\n\t"
-		"movl %3, %%edx\n\t"
-		"movl %4, %%esi\n\t"
-		"movl %5, %%edi\n\t" : :
-		"m" (savedreg[0]), "m" (savedreg[1]), "m" (savedreg[2]),
-		"m" (savedreg[3]), "m" (savedreg[4]), "m" (savedreg[5]));
-
-#elif defined (__GNUC__) && defined (__x86_64__)
- 	__asm__ __volatile__ (
-		"movq %0, %%rax\n\t"
-		"movq %1, %%rbx\n\t"
-		"movq %2, %%rcx\n\t"
-		"movq %3, %%rdx\n\t"
-		"movq %4, %%rsi\n\t"
-		"movq %5, %%rdi\n\t"
-		"movq %6, %%r8\n\t"
-		"movq %7, %%r9\n\t" : :
-		"m" (savedreg[0]), "m" (savedreg[1]), "m" (savedreg[2]),
-		"m" (savedreg[3]), "m" (savedreg[4]), "m" (savedreg[5]),
-		"m" (savedreg[6]), "m" (savedreg[7]));
-
-#endif
-#endif
 }
 
 /*-----------------------------------------------------------------------------
@@ -6205,14 +6115,6 @@ sdword etgFunctionCall(Effect *effect, struct etgeffectstatic *stat, ubyte *opco
     nParams = opptr->nParameters;
     returnType = opptr->returnValue;
     for (index = (sdword)nParams - 1; index >= 0; index--) {		//for each parameter
-#ifdef _MACOSX_86
-		if (opptr->passThis) {					// check to see if more offset is needed becasue a 'this' pointer will also be passed.
-			offset = index*4 + 4; // compute the offset for parameter plus extra offset for a 'this' pointer.
-		}
-		else {
-			offset = index*4; // compute the offset for paramenter.
-		}
-#endif
 		param = opptr->parameter[index].param;
         switch (opptr->parameter[index].type)
         {
@@ -6231,62 +6133,10 @@ sdword etgFunctionCall(Effect *effect, struct etgeffectstatic *stat, ubyte *opco
                 param = *((udword *)(effect->variable + param));
                 break;
         }
-//      if (((etgfunctioncall *)opcode)->parameter[index].type != EVT_Constant)
-//      {
-//          param = *((udword *)(effect->variable + param));
-//      }
-#if defined (_MSC_VER)
-        _asm                                                //push it onto the stack
-        {
-            mov eax, param
-            push eax
-        }
-#elif defined (__GNUC__) && defined (__i386__) && !defined (_MACOSX_86)
-        __asm__ __volatile__ (                              /* push it onto the stack */
-            "pushl %0\n\t"
-            :
-            : "a" (param) );
-#elif defined (_MACOSX_86)
-
-//		__asm__ __volatile__ (								/* store parameters above the stack pointer */
-//			"movl %0, (%%esp,%1)\n\t"
-//			:
-//			: "a" (param), "r" (offset) );
-		void *stackPointer;
-		__asm__ __volatile__ (
-			"movl %%esp, %0\n\t"
-			: "=r"(stackPointer)
-			:);
-		stackPointer += offset;
-		*stackPointer = param;
-#endif
     }// end of above for loop
 
 
     if (opptr->passThis) {
-#if defined (_MSC_VER)										//pass a 'this' pointer
-        _asm
-        {
-            mov eax, effect
-            push eax
-        }
-#elif defined (__GNUC__) && defined (__i386__) && !defined (_MACOSX_86)
-        __asm__ __volatile__ (                              /* pass a 'this' pointer */
-            "pushl %0\n\t"
-            :
-            : "a" (effect) );
-#elif defined (_MACOSX_86)
-//		__asm__ __volatile__ (								/* pass a 'this' pointer */
-//			"movl %0, (%%esp)\n\t"
-//			:
-//			: "a" (effect) );
-		void *stackPointer;
-		__asm__ __volatile__ (
-			"movl %%esp, %0\n\t"
-			: "=r"(stackPointer)
-			:);
-		*stackPointer = effect;
-#endif
     }
     param = opptr->function();								//call the function
     if (returnType != 0xffffffff)                           //if a return value is desired

@@ -37,26 +37,12 @@ int has_feature(int feature)
   {
       switch (feature) {
       case CPU_FEATURE_SSE:
-          __asm {
-              xorps xmm0, xmm0
-          }
           break;
       case CPU_FEATURE_SSE2:
-          __asm {
-              xorpd xmm0, xmm0
-          }
           break;
       case CPU_FEATURE_3DNOW:
-          __asm {
-              pfrcp mm0, mm0
-              emms
-          }
           break;
       case CPU_FEATURE_MMX:
-          __asm {
-              pxor mm0, mm0
-              emms
-          }
           break;
       }
   }
