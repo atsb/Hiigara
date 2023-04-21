@@ -1,26 +1,54 @@
-Microsoft Visual Studio Solution File, Format Version 8.00
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hwsdl", "prj\hwsdl.vcproj", "{81CB51C4-B434-4E12-B69B-BAEE102F2852}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hwsdl", "prj\hwsdl.vcxproj", "{81CB51C4-B434-4E12-B69B-BAEE102F2852}"
 EndProject
 Global
-	GlobalSection(SolutionConfiguration) = preSolution
-		Debug = Debug
-		Release (test) = Release (test)
-		release+symbols = release+symbols
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		old_dont use_1|x64 = old_dont use_1|x64
+		old_dont use_1|x86 = old_dont use_1|x86
+		Release (test)|x64 = Release (test)|x64
+		Release (test)|x86 = Release (test)|x86
+		release + symbols|x64 = release + symbols|x64
+		release + symbols|x86 = release + symbols|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+		release+symbols|x64 = release+symbols|x64
+		release+symbols|x86 = release+symbols|x86
 	EndGlobalSection
-	GlobalSection(ProjectDependencies) = postSolution
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.Debug|x64.ActiveCfg = Debug|x64
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.Debug|x64.Build.0 = Debug|x64
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.Debug|x86.ActiveCfg = Debug|Win32
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.Debug|x86.Build.0 = Debug|Win32
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.old_dont use_1|x64.ActiveCfg = old_dont use_1|x64
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.old_dont use_1|x64.Build.0 = old_dont use_1|x64
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.old_dont use_1|x86.ActiveCfg = old_dont use_1|Win32
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.old_dont use_1|x86.Build.0 = old_dont use_1|Win32
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.Release (test)|x64.ActiveCfg = release + symbols|x64
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.Release (test)|x64.Build.0 = release + symbols|x64
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.Release (test)|x86.ActiveCfg = Release|Win32
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.Release (test)|x86.Build.0 = Release|Win32
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.release + symbols|x64.ActiveCfg = release + symbols|x64
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.release + symbols|x64.Build.0 = release + symbols|x64
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.release + symbols|x86.ActiveCfg = release + symbols|Win32
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.release + symbols|x86.Build.0 = release + symbols|Win32
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.Release|x64.ActiveCfg = Release|x64
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.Release|x64.Build.0 = Release|x64
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.Release|x86.ActiveCfg = Release|Win32
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.Release|x86.Build.0 = Release|Win32
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.release+symbols|x64.ActiveCfg = release + symbols|x64
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.release+symbols|x64.Build.0 = release + symbols|x64
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.release+symbols|x86.ActiveCfg = release + symbols|Win32
+		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.release+symbols|x86.Build.0 = release + symbols|Win32
 	EndGlobalSection
-	GlobalSection(ProjectConfiguration) = postSolution
-		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.Debug.ActiveCfg = Debug|Win32
-		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.Debug.Build.0 = Debug|Win32
-		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.Release (test).ActiveCfg = Release|Win32
-		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.Release (test).Build.0 = Release|Win32
-		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.release+symbols.ActiveCfg = release + symbols|Win32
-		{81CB51C4-B434-4E12-B69B-BAEE102F2852}.release+symbols.Build.0 = release + symbols|Win32
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-	EndGlobalSection
-	GlobalSection(ExtensibilityAddIns) = postSolution
+		SolutionGuid = {67A09EE7-A80E-42D4-98F3-6B5F6F916275}
 	EndGlobalSection
 EndGlobal
