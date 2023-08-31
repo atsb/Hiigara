@@ -6,11 +6,7 @@
     Copyright Relic Entertainment, Inc.  All rights reserved.
 =============================================================================*/
 
-#ifdef __APPLE__
 #include <SDL2/SDL.h>
-#else
-#include <SDL.h>
-#endif
 
 #include "TimeoutTimer.h"
 #include "utility.h"

@@ -13,13 +13,8 @@
 #include <string.h>
 #include <sys/stat.h>
 
-#ifdef __APPLE__
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_syswm.h>
-#else
-#include <SDL.h>
-#include "SDL_syswm.h"
-#endif
 
 #include "AIPlayer.h"
 #include "Animatic.h"

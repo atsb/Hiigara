@@ -34,6 +34,7 @@ SinglePlayer.o: ../../../src/Game/SinglePlayer.c \
  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+ /usr/include/x86_64-linux-gnu/bits/select2.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
@@ -51,18 +52,22 @@ SinglePlayer.o: ../../../src/Game/SinglePlayer.c \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
- /usr/include/x86_64-linux-gnu/bits/stdio.h /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio2.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-float.h /usr/include/string.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib.h /usr/include/string.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/strings.h /usr/include/wchar.h \
- /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/include/strings.h \
+ /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
+ /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
+ /usr/include/wchar.h /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
- /usr/include/inttypes.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar2.h /usr/include/inttypes.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h /usr/include/ctype.h \
  /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -172,14 +177,14 @@ SinglePlayer.o: ../../../src/Game/SinglePlayer.c \
  /usr/include/SDL2/SDL_sensor.h /usr/include/SDL2/SDL_quit.h \
  /usr/include/SDL2/SDL_gesture.h /usr/include/SDL2/SDL_touch.h \
  /usr/include/SDL2/SDL_filesystem.h /usr/include/SDL2/SDL_haptic.h \
- /usr/include/SDL2/SDL_hints.h /usr/include/SDL2/SDL_loadso.h \
- /usr/include/SDL2/SDL_log.h /usr/include/SDL2/SDL_messagebox.h \
- /usr/include/SDL2/SDL_metal.h /usr/include/SDL2/SDL_power.h \
- /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_shape.h \
- /usr/include/SDL2/SDL_system.h /usr/include/SDL2/SDL_timer.h \
- /usr/include/SDL2/SDL_version.h /usr/include/SDL2/SDL_locale.h \
- /usr/include/SDL2/SDL_misc.h /usr/include/SDL2/SDL_stdinc.h \
- /usr/include/SDL2/SDL_endian.h \
+ /usr/include/SDL2/SDL_hidapi.h /usr/include/SDL2/SDL_hints.h \
+ /usr/include/SDL2/SDL_loadso.h /usr/include/SDL2/SDL_log.h \
+ /usr/include/SDL2/SDL_messagebox.h /usr/include/SDL2/SDL_metal.h \
+ /usr/include/SDL2/SDL_power.h /usr/include/SDL2/SDL_render.h \
+ /usr/include/SDL2/SDL_shape.h /usr/include/SDL2/SDL_system.h \
+ /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
+ /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
+ /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_endian.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
@@ -235,13 +240,13 @@ SinglePlayer.o: ../../../src/Game/SinglePlayer.c \
  /usr/include/x86_64-linux-gnu/bits/struct_stat.h /usr/include/dirent.h \
  /usr/include/x86_64-linux-gnu/bits/dirent.h \
  /usr/include/x86_64-linux-gnu/bits/dirent_ext.h /usr/include/unistd.h \
- /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
- /usr/include/x86_64-linux-gnu/bits/sysmacros.h \
  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
  /usr/include/x86_64-linux-gnu/sys/time.h ../../../src/SDL/font.h \
  ../../../src/SDL/prim2d.h ../../../src/Ships/GravWellGenerator.h \
  ../../../src/Game/LinkedList.h ../../../src/Game/HorseRace.h \
@@ -263,21 +268,30 @@ SinglePlayer.o: ../../../src/Game/SinglePlayer.c \
  ../../../src/Game/Tutor.h ../../../src/Game/Tweak.h \
  ../../../src/Game/UnivUpdate.h ../../../src/SDL/utility.h \
  ../../../src/Game/ObjTypes.h ../../../src/Game/Region.h \
- ../../../src/SDL/TitanInterfaceC.h ../Missions/Generated/Mission01.h \
+ ../../../src/SDL/TitanInterfaceC.h \
+ ../../../src/Game/../Missions/Generated/Mission01.h \
  ../../../src/Game/AIMoves.h ../../../src/Game/AITeam.h \
  ../../../src/Game/Attributes.h ../../../src/Game/CommandWrap.h \
  ../../../src/Game/KASFunc.h ../../../src/Game/Objectives.h \
  ../../../src/Game/Timer.h ../../../src/Game/TradeMgr.h \
  ../../../src/Game/Vector.h ../../../src/Game/Volume.h \
- ../Missions/Generated/Mission02.h ../Missions/Generated/Mission03.h \
- ../Missions/Generated/Mission04.h ../Missions/Generated/Mission05.h \
- ../Missions/Generated/Mission05_OEM.h ../Missions/Generated/Mission06.h \
- ../Missions/Generated/Mission07.h ../Missions/Generated/Mission08.h \
- ../Missions/Generated/Mission09.h ../Missions/Generated/Mission10.h \
- ../Missions/Generated/Mission11.h ../Missions/Generated/Mission12.h \
- ../Missions/Generated/Mission13.h ../Missions/Generated/Mission14.h \
- ../Missions/Generated/Mission15.h ../Missions/Generated/Mission16.h \
- ../Missions/Generated/Tutorial1.h
+ ../../../src/Game/../Missions/Generated/Mission02.h \
+ ../../../src/Game/../Missions/Generated/Mission03.h \
+ ../../../src/Game/../Missions/Generated/Mission04.h \
+ ../../../src/Game/../Missions/Generated/Mission05.h \
+ ../../../src/Game/../Missions/Generated/Mission05_OEM.h \
+ ../../../src/Game/../Missions/Generated/Mission06.h \
+ ../../../src/Game/../Missions/Generated/Mission07.h \
+ ../../../src/Game/../Missions/Generated/Mission08.h \
+ ../../../src/Game/../Missions/Generated/Mission09.h \
+ ../../../src/Game/../Missions/Generated/Mission10.h \
+ ../../../src/Game/../Missions/Generated/Mission11.h \
+ ../../../src/Game/../Missions/Generated/Mission12.h \
+ ../../../src/Game/../Missions/Generated/Mission13.h \
+ ../../../src/Game/../Missions/Generated/Mission14.h \
+ ../../../src/Game/../Missions/Generated/Mission15.h \
+ ../../../src/Game/../Missions/Generated/Mission16.h \
+ ../../../src/Game/../Missions/Generated/Tutorial1.h
 /usr/include/stdc-predef.h:
 ../../../src/Game/SinglePlayer.h:
 ../../../src/Game/KAS.h:
@@ -322,6 +336,7 @@ SinglePlayer.o: ../../../src/Game/SinglePlayer.c \
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+/usr/include/x86_64-linux-gnu/bits/select2.h:
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
@@ -341,20 +356,25 @@ SinglePlayer.o: ../../../src/Game/SinglePlayer.c \
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 /usr/include/x86_64-linux-gnu/bits/stdio.h:
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:
 /usr/include/stdlib.h:
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 /usr/include/alloca.h:
 /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+/usr/include/x86_64-linux-gnu/bits/stdlib.h:
 /usr/include/string.h:
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 /usr/include/strings.h:
+/usr/include/x86_64-linux-gnu/bits/strings_fortified.h:
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:
 /usr/include/wchar.h:
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
+/usr/include/x86_64-linux-gnu/bits/wchar2.h:
 /usr/include/inttypes.h:
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h:
 /usr/include/stdint.h:
@@ -482,6 +502,7 @@ SinglePlayer.o: ../../../src/Game/SinglePlayer.c \
 /usr/include/SDL2/SDL_touch.h:
 /usr/include/SDL2/SDL_filesystem.h:
 /usr/include/SDL2/SDL_haptic.h:
+/usr/include/SDL2/SDL_hidapi.h:
 /usr/include/SDL2/SDL_hints.h:
 /usr/include/SDL2/SDL_loadso.h:
 /usr/include/SDL2/SDL_log.h:
@@ -595,13 +616,13 @@ SinglePlayer.o: ../../../src/Game/SinglePlayer.c \
 /usr/include/x86_64-linux-gnu/bits/dirent.h:
 /usr/include/x86_64-linux-gnu/bits/dirent_ext.h:
 /usr/include/unistd.h:
-/usr/include/x86_64-linux-gnu/sys/sysmacros.h:
-/usr/include/x86_64-linux-gnu/bits/sysmacros.h:
 /usr/include/x86_64-linux-gnu/bits/posix_opt.h:
 /usr/include/x86_64-linux-gnu/bits/environments.h:
 /usr/include/x86_64-linux-gnu/bits/confname.h:
 /usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
 /usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+/usr/include/x86_64-linux-gnu/bits/unistd.h:
+/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
 /usr/include/x86_64-linux-gnu/sys/time.h:
 ../../../src/SDL/font.h:
 ../../../src/SDL/prim2d.h:
@@ -645,7 +666,7 @@ SinglePlayer.o: ../../../src/Game/SinglePlayer.c \
 ../../../src/Game/ObjTypes.h:
 ../../../src/Game/Region.h:
 ../../../src/SDL/TitanInterfaceC.h:
-../Missions/Generated/Mission01.h:
+../../../src/Game/../Missions/Generated/Mission01.h:
 ../../../src/Game/AIMoves.h:
 ../../../src/Game/AITeam.h:
 ../../../src/Game/Attributes.h:
@@ -656,20 +677,20 @@ SinglePlayer.o: ../../../src/Game/SinglePlayer.c \
 ../../../src/Game/TradeMgr.h:
 ../../../src/Game/Vector.h:
 ../../../src/Game/Volume.h:
-../Missions/Generated/Mission02.h:
-../Missions/Generated/Mission03.h:
-../Missions/Generated/Mission04.h:
-../Missions/Generated/Mission05.h:
-../Missions/Generated/Mission05_OEM.h:
-../Missions/Generated/Mission06.h:
-../Missions/Generated/Mission07.h:
-../Missions/Generated/Mission08.h:
-../Missions/Generated/Mission09.h:
-../Missions/Generated/Mission10.h:
-../Missions/Generated/Mission11.h:
-../Missions/Generated/Mission12.h:
-../Missions/Generated/Mission13.h:
-../Missions/Generated/Mission14.h:
-../Missions/Generated/Mission15.h:
-../Missions/Generated/Mission16.h:
-../Missions/Generated/Tutorial1.h:
+../../../src/Game/../Missions/Generated/Mission02.h:
+../../../src/Game/../Missions/Generated/Mission03.h:
+../../../src/Game/../Missions/Generated/Mission04.h:
+../../../src/Game/../Missions/Generated/Mission05.h:
+../../../src/Game/../Missions/Generated/Mission05_OEM.h:
+../../../src/Game/../Missions/Generated/Mission06.h:
+../../../src/Game/../Missions/Generated/Mission07.h:
+../../../src/Game/../Missions/Generated/Mission08.h:
+../../../src/Game/../Missions/Generated/Mission09.h:
+../../../src/Game/../Missions/Generated/Mission10.h:
+../../../src/Game/../Missions/Generated/Mission11.h:
+../../../src/Game/../Missions/Generated/Mission12.h:
+../../../src/Game/../Missions/Generated/Mission13.h:
+../../../src/Game/../Missions/Generated/Mission14.h:
+../../../src/Game/../Missions/Generated/Mission15.h:
+../../../src/Game/../Missions/Generated/Mission16.h:
+../../../src/Game/../Missions/Generated/Tutorial1.h:

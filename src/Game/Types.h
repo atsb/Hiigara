@@ -12,15 +12,9 @@
 #ifndef ___TYPES_H
 #define ___TYPES_H
 
-#ifdef __APPLE__
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_stdinc.h>
 #include <SDL2/SDL_endian.h>
-#else
-#include <SDL.h>
-#include "SDL_stdinc.h"
-#include "SDL_endian.h"
-#endif
 
 #include <string.h>
 #include <stdio.h>

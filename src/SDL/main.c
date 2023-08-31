@@ -5,11 +5,7 @@
         Created June 1997 by Luke Moloney.
 ============================================================================*/
 
-#ifdef __APPLE__
 #include <SDL2/SDL.h>
-#else
-#include <SDL.h>
-#endif
 
 #include <limits.h> // for PATH_MAX
 #include <stdio.h>

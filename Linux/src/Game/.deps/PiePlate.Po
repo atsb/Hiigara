@@ -29,7 +29,8 @@ PiePlate.o: ../../../src/Game/PiePlate.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /usr/include/x86_64-linux-gnu/bits/stdio.h ../../../src/Game/Clipper.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio2.h ../../../src/Game/Clipper.h \
  ../../../src/Game/Vector.h ../../../src/Game/Types.h \
  /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
  /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
@@ -51,6 +52,7 @@ PiePlate.o: ../../../src/Game/PiePlate.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+ /usr/include/x86_64-linux-gnu/bits/select2.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
@@ -60,14 +62,17 @@ PiePlate.o: ../../../src/Game/PiePlate.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-float.h /usr/include/string.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib.h /usr/include/string.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/strings.h /usr/include/wchar.h \
- /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/include/strings.h \
+ /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
+ /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
+ /usr/include/wchar.h /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
- /usr/include/inttypes.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar2.h /usr/include/inttypes.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h /usr/include/ctype.h \
  /usr/include/SDL2/SDL_assert.h /usr/include/SDL2/SDL_atomic.h \
@@ -169,14 +174,14 @@ PiePlate.o: ../../../src/Game/PiePlate.c /usr/include/stdc-predef.h \
  /usr/include/SDL2/SDL_sensor.h /usr/include/SDL2/SDL_quit.h \
  /usr/include/SDL2/SDL_gesture.h /usr/include/SDL2/SDL_touch.h \
  /usr/include/SDL2/SDL_filesystem.h /usr/include/SDL2/SDL_haptic.h \
- /usr/include/SDL2/SDL_hints.h /usr/include/SDL2/SDL_loadso.h \
- /usr/include/SDL2/SDL_log.h /usr/include/SDL2/SDL_messagebox.h \
- /usr/include/SDL2/SDL_metal.h /usr/include/SDL2/SDL_power.h \
- /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_shape.h \
- /usr/include/SDL2/SDL_system.h /usr/include/SDL2/SDL_timer.h \
- /usr/include/SDL2/SDL_version.h /usr/include/SDL2/SDL_locale.h \
- /usr/include/SDL2/SDL_misc.h /usr/include/SDL2/SDL_stdinc.h \
- /usr/include/SDL2/SDL_endian.h \
+ /usr/include/SDL2/SDL_hidapi.h /usr/include/SDL2/SDL_hints.h \
+ /usr/include/SDL2/SDL_loadso.h /usr/include/SDL2/SDL_log.h \
+ /usr/include/SDL2/SDL_messagebox.h /usr/include/SDL2/SDL_metal.h \
+ /usr/include/SDL2/SDL_power.h /usr/include/SDL2/SDL_render.h \
+ /usr/include/SDL2/SDL_shape.h /usr/include/SDL2/SDL_system.h \
+ /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
+ /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
+ /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_endian.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
@@ -192,42 +197,42 @@ PiePlate.o: ../../../src/Game/PiePlate.c /usr/include/stdc-predef.h \
  ../../../src/Game/MaxMultiplayer.h ../../../src/Game/Types.h \
  ../../../src/Game/FontReg.h ../../../src/SDL/glinc.h \
  /usr/include/GL/glew.h /usr/include/GL/glu.h /usr/include/GL/gl.h \
- /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_opengl.h \
- ../../../src/Game/LOD.h ../../../src/Game/Mesh.h \
- ../../../src/Game/Matrix.h ../../../src/SDL/main.h \
- ../../../src/SDL/mainrgn.h ../../../src/Game/Camera.h \
- ../../../src/Game/FEFlow.h ../../../src/Game/Region.h \
- ../../../src/Game/Memory.h ../../../src/Game/LinkedList.h \
- ../../../src/Game/Task.h ../../../src/Game/Debug.h \
- ../../../src/Game/Key.h /usr/include/SDL2/SDL_scancode.h \
- /usr/include/SDL2/SDL_keycode.h ../../../src/SDL/prim2d.h \
- ../../../src/Game/SpaceObj.h ../../../src/Game/ETG.h \
- ../../../src/Game/ClassDefs.h ../../../src/Game/ObjTypes.h \
- ../../../src/Game/RaceDefs.h ../../../src/Ships/ShipDefs.h \
- ../../../src/Game/Globals.h ../../../src/Game/MaxMultiplayer.h \
- ../../../src/SDL/Queue.h ../../../src/SDL/TitanInterfaceC.h \
- ../../../src/Game/MeshAnim.h ../../../src/Game/B-Spline.h \
- ../../../src/ThirdParty/CRC/CRC32.h ../../../src/Game/Nebulae.h \
- ../../../src/Game/Clouds.h ../../../src/Game/SoundStructs.h \
- ../../../src/Game/Trails.h ../../../src/SDL/mouse.h \
- ../../../src/Game/ShipSelect.h ../../../src/Game/SpaceObj.h \
- ../../../src/Game/PiePlate.h ../../../src/SDL/prim3d.h \
- ../../../src/SDL/texreg.h ../../../src/Game/Vector.h \
- ../../../src/Ships/ProximitySensor.h ../../../src/Game/Universe.h \
- ../../../src/Game/CameraCommand.h ../../../src/Game/Camera.h \
- ../../../src/Game/ShipSelect.h ../../../src/Game/CommandLayer.h \
- ../../../src/Game/Dock.h ../../../src/SDL/render.h \
- ../../../src/Game/Matrix.h ../../../src/Game/Task.h \
- ../../../src/Game/Formation.h ../../../src/Game/FormationDefs.h \
- ../../../src/Game/ResCollect.h ../../../src/Game/Attributes.h \
- ../../../src/Game/ConsMgr.h ../../../src/Game/GameStats.h \
- ../../../src/Game/ResearchAPI.h ../../../src/Game/Star3d.h \
- ../../../src/Game/Select.h ../../../src/Game/Sensors.h \
- ../../../src/Game/FEFlow.h ../../../src/Game/SoundEvent.h \
- ../../../src/Game/SoundEventDefs.h ../../../src/Game/SoundMusic.h \
- ../../../src/Game/SpeechEvent.h ../../../src/Game/Tutor.h \
- ../../../src/Game/Volume.h ../../../src/Game/Tweak.h \
- ../../../src/Game/Undo.h ../../../src/Game/Universe.h
+ /usr/include/SDL2/SDL_opengl.h ../../../src/Game/LOD.h \
+ ../../../src/Game/Mesh.h ../../../src/Game/Matrix.h \
+ ../../../src/SDL/main.h ../../../src/SDL/mainrgn.h \
+ ../../../src/Game/Camera.h ../../../src/Game/FEFlow.h \
+ ../../../src/Game/Region.h ../../../src/Game/Memory.h \
+ ../../../src/Game/LinkedList.h ../../../src/Game/Task.h \
+ ../../../src/Game/Debug.h ../../../src/Game/Key.h \
+ /usr/include/SDL2/SDL_scancode.h /usr/include/SDL2/SDL_keycode.h \
+ ../../../src/SDL/prim2d.h ../../../src/Game/SpaceObj.h \
+ ../../../src/Game/ETG.h ../../../src/Game/ClassDefs.h \
+ ../../../src/Game/ObjTypes.h ../../../src/Game/RaceDefs.h \
+ ../../../src/Ships/ShipDefs.h ../../../src/Game/Globals.h \
+ ../../../src/Game/MaxMultiplayer.h ../../../src/SDL/Queue.h \
+ ../../../src/SDL/TitanInterfaceC.h ../../../src/Game/MeshAnim.h \
+ ../../../src/Game/B-Spline.h ../../../src/ThirdParty/CRC/CRC32.h \
+ ../../../src/Game/Nebulae.h ../../../src/Game/Clouds.h \
+ ../../../src/Game/SoundStructs.h ../../../src/Game/Trails.h \
+ ../../../src/SDL/mouse.h ../../../src/Game/ShipSelect.h \
+ ../../../src/Game/SpaceObj.h ../../../src/Game/PiePlate.h \
+ ../../../src/SDL/prim3d.h ../../../src/SDL/texreg.h \
+ ../../../src/Game/Vector.h ../../../src/Ships/ProximitySensor.h \
+ ../../../src/Game/Universe.h ../../../src/Game/CameraCommand.h \
+ ../../../src/Game/Camera.h ../../../src/Game/ShipSelect.h \
+ ../../../src/Game/CommandLayer.h ../../../src/Game/Dock.h \
+ ../../../src/SDL/render.h ../../../src/Game/Matrix.h \
+ ../../../src/Game/Task.h ../../../src/Game/Formation.h \
+ ../../../src/Game/FormationDefs.h ../../../src/Game/ResCollect.h \
+ ../../../src/Game/Attributes.h ../../../src/Game/ConsMgr.h \
+ ../../../src/Game/GameStats.h ../../../src/Game/ResearchAPI.h \
+ ../../../src/Game/Star3d.h ../../../src/Game/Select.h \
+ ../../../src/Game/Sensors.h ../../../src/Game/FEFlow.h \
+ ../../../src/Game/SoundEvent.h ../../../src/Game/SoundEventDefs.h \
+ ../../../src/Game/SoundMusic.h ../../../src/Game/SpeechEvent.h \
+ ../../../src/Game/Tutor.h ../../../src/Game/Volume.h \
+ ../../../src/Game/Tweak.h ../../../src/Game/Undo.h \
+ ../../../src/Game/Universe.h
 /usr/include/stdc-predef.h:
 /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h:
 /usr/include/math.h:
@@ -263,6 +268,7 @@ PiePlate.o: ../../../src/Game/PiePlate.c /usr/include/stdc-predef.h \
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 /usr/include/x86_64-linux-gnu/bits/stdio.h:
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:
 ../../../src/Game/Clipper.h:
 ../../../src/Game/Vector.h:
 ../../../src/Game/Types.h:
@@ -291,6 +297,7 @@ PiePlate.o: ../../../src/Game/PiePlate.c /usr/include/stdc-predef.h \
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+/usr/include/x86_64-linux-gnu/bits/select2.h:
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
@@ -303,14 +310,18 @@ PiePlate.o: ../../../src/Game/PiePlate.c /usr/include/stdc-predef.h \
 /usr/include/alloca.h:
 /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+/usr/include/x86_64-linux-gnu/bits/stdlib.h:
 /usr/include/string.h:
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 /usr/include/strings.h:
+/usr/include/x86_64-linux-gnu/bits/strings_fortified.h:
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:
 /usr/include/wchar.h:
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
+/usr/include/x86_64-linux-gnu/bits/wchar2.h:
 /usr/include/inttypes.h:
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h:
 /usr/include/stdint.h:
@@ -429,6 +440,7 @@ PiePlate.o: ../../../src/Game/PiePlate.c /usr/include/stdc-predef.h \
 /usr/include/SDL2/SDL_touch.h:
 /usr/include/SDL2/SDL_filesystem.h:
 /usr/include/SDL2/SDL_haptic.h:
+/usr/include/SDL2/SDL_hidapi.h:
 /usr/include/SDL2/SDL_hints.h:
 /usr/include/SDL2/SDL_loadso.h:
 /usr/include/SDL2/SDL_log.h:
@@ -468,7 +480,6 @@ PiePlate.o: ../../../src/Game/PiePlate.c /usr/include/stdc-predef.h \
 /usr/include/GL/glew.h:
 /usr/include/GL/glu.h:
 /usr/include/GL/gl.h:
-/usr/include/SDL2/SDL.h:
 /usr/include/SDL2/SDL_opengl.h:
 ../../../src/Game/LOD.h:
 ../../../src/Game/Mesh.h:

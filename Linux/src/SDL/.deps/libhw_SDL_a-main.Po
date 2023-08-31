@@ -1,8 +1,9 @@
 libhw_SDL_a-main.o: ../../../src/SDL/main.c /usr/include/stdc-predef.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
- /usr/include/limits.h \
- /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+ /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
+ /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
+ /usr/include/x86_64-linux-gnu/SDL2/_real_SDL_config.h \
+ /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
+ /usr/include/SDL2/close_code.h /usr/include/x86_64-linux-gnu/sys/types.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/bits/timesize.h \
@@ -10,34 +11,14 @@ libhw_SDL_a-main.o: ../../../src/SDL/main.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/long-double.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
- /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
- /usr/include/x86_64-linux-gnu/bits/local_lim.h \
- /usr/include/linux/limits.h \
- /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
- /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h \
- /usr/include/x86_64-linux-gnu/bits/posix2_lim.h /usr/include/stdio.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/types.h \
  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
  /usr/include/x86_64-linux-gnu/bits/time64.h \
- /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
- /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
- /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
- /usr/include/x86_64-linux-gnu/bits/stdio.h /usr/include/stdlib.h \
- /usr/include/x86_64-linux-gnu/bits/waitflags.h \
- /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
- /usr/include/x86_64-linux-gnu/sys/types.h \
  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h /usr/include/endian.h \
  /usr/include/x86_64-linux-gnu/bits/endian.h \
  /usr/include/x86_64-linux-gnu/bits/endianness.h \
@@ -49,29 +30,40 @@ libhw_SDL_a-main.o: ../../../src/SDL/main.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+ /usr/include/x86_64-linux-gnu/bits/select2.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
  /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
- /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio2.h /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-float.h /usr/include/string.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib.h /usr/include/string.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/strings.h /usr/include/time.h \
- /usr/include/x86_64-linux-gnu/bits/time.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
- /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
- /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
- /usr/include/x86_64-linux-gnu/SDL2/_real_SDL_config.h \
- /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
- /usr/include/SDL2/close_code.h /usr/include/wchar.h \
- /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/include/strings.h \
+ /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
+ /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
+ /usr/include/wchar.h /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
- /usr/include/inttypes.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar2.h /usr/include/inttypes.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h /usr/include/ctype.h \
  /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -181,72 +173,83 @@ libhw_SDL_a-main.o: ../../../src/SDL/main.c /usr/include/stdc-predef.h \
  /usr/include/SDL2/SDL_sensor.h /usr/include/SDL2/SDL_quit.h \
  /usr/include/SDL2/SDL_gesture.h /usr/include/SDL2/SDL_touch.h \
  /usr/include/SDL2/SDL_filesystem.h /usr/include/SDL2/SDL_haptic.h \
- /usr/include/SDL2/SDL_hints.h /usr/include/SDL2/SDL_loadso.h \
- /usr/include/SDL2/SDL_log.h /usr/include/SDL2/SDL_messagebox.h \
- /usr/include/SDL2/SDL_metal.h /usr/include/SDL2/SDL_power.h \
- /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_shape.h \
- /usr/include/SDL2/SDL_system.h /usr/include/SDL2/SDL_timer.h \
- /usr/include/SDL2/SDL_version.h /usr/include/SDL2/SDL_locale.h \
- /usr/include/SDL2/SDL_misc.h ../../../src/Game/AIPlayer.h \
- ../../../src/Game/AITeam.h ../../../src/Game/AIEvents.h \
- ../../../src/Game/ShipSelect.h ../../../src/Game/SpaceObj.h \
- ../../../src/Game/Color.h ../../../src/Game/Types.h \
- /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_endian.h \
- ../../../src/Game/ETG.h ../../../src/Game/ClassDefs.h \
- ../../../src/Game/ObjTypes.h ../../../src/Game/RaceDefs.h \
- ../../../src/Ships/ShipDefs.h ../../../src/Game/Types.h \
- ../../../src/Game/Matrix.h ../../../src/Game/Vector.h \
- ../../../src/Game/Mesh.h ../../../src/Game/Globals.h \
- ../../../src/Game/MaxMultiplayer.h ../../../src/SDL/Queue.h \
- ../../../src/SDL/TitanInterfaceC.h ../../../src/Game/LinkedList.h \
- ../../../src/Game/LOD.h ../../../src/Game/MeshAnim.h \
- ../../../src/Game/B-Spline.h ../../../src/ThirdParty/CRC/CRC32.h \
- ../../../src/Game/Nebulae.h ../../../src/Game/Clouds.h \
- ../../../src/Game/SoundStructs.h ../../../src/Game/Trails.h \
- ../../../src/Game/AIUtilities.h ../../../src/Game/Blobs.h \
- ../../../src/Game/Universe.h ../../../src/Game/CameraCommand.h \
- ../../../src/Game/Camera.h ../../../src/Game/CommandLayer.h \
- ../../../src/Game/Dock.h ../../../src/SDL/render.h \
- ../../../src/Game/Camera.h ../../../src/Game/Color.h \
- ../../../src/Game/Matrix.h ../../../src/Game/SpaceObj.h \
- ../../../src/Game/Task.h ../../../src/Game/Debug.h \
- ../../../src/Game/Formation.h ../../../src/Game/FormationDefs.h \
- ../../../src/Game/ResCollect.h ../../../src/Game/Attributes.h \
- ../../../src/Game/ConsMgr.h ../../../src/Game/Region.h \
- ../../../src/Game/Memory.h ../../../src/Game/Task.h \
- ../../../src/Game/Key.h /usr/include/SDL2/SDL_scancode.h \
- /usr/include/SDL2/SDL_keycode.h ../../../src/SDL/prim2d.h \
- ../../../src/SDL/main.h ../../../src/SDL/mainswitches.h \
- ../../../src/Game/MaxMultiplayer.h ../../../src/Game/GameStats.h \
- ../../../src/Game/ResearchAPI.h ../../../src/Game/Star3d.h \
- ../../../src/Game/Volume.h ../../../src/Game/AIVar.h \
- ../../../src/Game/KAS.h ../../../src/Game/AutoLOD.h \
- ../../../src/SDL/avi.h ../../../src/Game/BTG.h \
- ../../../src/Game/Captaincy.h ../../../src/Game/ColPick.h \
- ../../../src/SDL/texreg.h ../../../src/Game/CommandLayer.h \
- ../../../src/Game/ConsMgr.h ../../../src/Game/Debug.h \
- ../../../src/Game/Demo.h ../../../src/Game/Randy.h \
- ../../../src/Game/FEReg.h ../../../src/Game/UIControls.h \
- ../../../src/Game/FEFlow.h ../../../src/SDL/font.h \
- ../../../src/SDL/prim2d.h ../../../src/Game/File.h \
- ../../../src/Game/BigFile.h ../../../src/SDL/standard_library.h \
+ /usr/include/SDL2/SDL_hidapi.h /usr/include/SDL2/SDL_hints.h \
+ /usr/include/SDL2/SDL_loadso.h /usr/include/SDL2/SDL_log.h \
+ /usr/include/SDL2/SDL_messagebox.h /usr/include/SDL2/SDL_metal.h \
+ /usr/include/SDL2/SDL_power.h /usr/include/SDL2/SDL_render.h \
+ /usr/include/SDL2/SDL_shape.h /usr/include/SDL2/SDL_system.h \
+ /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
+ /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
+ /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+ ../../../src/Game/AIPlayer.h ../../../src/Game/AITeam.h \
+ ../../../src/Game/AIEvents.h ../../../src/Game/ShipSelect.h \
+ ../../../src/Game/SpaceObj.h ../../../src/Game/Color.h \
+ ../../../src/Game/Types.h /usr/include/SDL2/SDL_stdinc.h \
+ /usr/include/SDL2/SDL_endian.h ../../../src/Game/ETG.h \
+ ../../../src/Game/ClassDefs.h ../../../src/Game/ObjTypes.h \
+ ../../../src/Game/RaceDefs.h ../../../src/Ships/ShipDefs.h \
+ ../../../src/Game/Types.h ../../../src/Game/Matrix.h \
+ ../../../src/Game/Vector.h ../../../src/Game/Mesh.h \
+ ../../../src/Game/Globals.h ../../../src/Game/MaxMultiplayer.h \
+ ../../../src/SDL/Queue.h ../../../src/SDL/TitanInterfaceC.h \
+ ../../../src/Game/LinkedList.h ../../../src/Game/LOD.h \
+ ../../../src/Game/MeshAnim.h ../../../src/Game/B-Spline.h \
+ ../../../src/ThirdParty/CRC/CRC32.h ../../../src/Game/Nebulae.h \
+ ../../../src/Game/Clouds.h ../../../src/Game/SoundStructs.h \
+ ../../../src/Game/Trails.h ../../../src/Game/AIUtilities.h \
+ ../../../src/Game/Blobs.h ../../../src/Game/Universe.h \
+ ../../../src/Game/CameraCommand.h ../../../src/Game/Camera.h \
+ ../../../src/Game/CommandLayer.h ../../../src/Game/Dock.h \
+ ../../../src/SDL/render.h ../../../src/Game/Camera.h \
+ ../../../src/Game/Color.h ../../../src/Game/Matrix.h \
+ ../../../src/Game/SpaceObj.h ../../../src/Game/Task.h \
+ ../../../src/Game/Debug.h ../../../src/Game/Formation.h \
+ ../../../src/Game/FormationDefs.h ../../../src/Game/ResCollect.h \
+ ../../../src/Game/Attributes.h ../../../src/Game/ConsMgr.h \
+ ../../../src/Game/Region.h ../../../src/Game/Memory.h \
+ ../../../src/Game/Task.h ../../../src/Game/Key.h \
+ /usr/include/SDL2/SDL_scancode.h /usr/include/SDL2/SDL_keycode.h \
+ ../../../src/SDL/prim2d.h ../../../src/SDL/main.h \
+ ../../../src/SDL/mainswitches.h ../../../src/Game/MaxMultiplayer.h \
+ ../../../src/Game/GameStats.h ../../../src/Game/ResearchAPI.h \
+ ../../../src/Game/Star3d.h ../../../src/Game/Volume.h \
+ ../../../src/Game/AIVar.h ../../../src/Game/KAS.h \
+ ../../../src/Game/AutoLOD.h ../../../src/SDL/avi.h \
+ ../../../src/Game/BTG.h ../../../src/Game/Captaincy.h \
+ ../../../src/Game/ColPick.h ../../../src/SDL/texreg.h \
+ ../../../src/Game/CommandLayer.h ../../../src/Game/ConsMgr.h \
+ ../../../src/Game/Debug.h ../../../src/Game/Demo.h \
+ ../../../src/Game/Randy.h ../../../src/Game/FEReg.h \
+ ../../../src/Game/UIControls.h ../../../src/Game/FEFlow.h \
+ ../../../src/SDL/font.h ../../../src/SDL/prim2d.h \
+ ../../../src/Game/File.h ../../../src/Game/BigFile.h \
+ ../../../src/SDL/standard_library.h \
  /usr/include/x86_64-linux-gnu/sys/stat.h \
  /usr/include/x86_64-linux-gnu/bits/stat.h \
  /usr/include/x86_64-linux-gnu/bits/struct_stat.h /usr/include/dirent.h \
  /usr/include/x86_64-linux-gnu/bits/dirent.h \
  /usr/include/x86_64-linux-gnu/bits/dirent_ext.h /usr/include/unistd.h \
- /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
- /usr/include/x86_64-linux-gnu/bits/sysmacros.h \
  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
  /usr/include/x86_64-linux-gnu/sys/time.h ../../../src/Game/FontReg.h \
  ../../../src/Game/Formation.h ../../../src/SDL/glinc.h \
  /usr/include/GL/glew.h /usr/include/GL/glu.h /usr/include/GL/gl.h \
- /usr/local/include/SDL2/SDL.h /usr/local/include/SDL2/SDL_opengl.h \
- /usr/local/include/SDL2/SDL_config.h ../../../src/Game/Globals.h \
+ /usr/include/SDL2/SDL_opengl.h ../../../src/Game/Globals.h \
  ../../../src/Game/HorseRace.h ../../../src/Game/CommandNetwork.h \
  ../../../src/Game/Captaincy.h ../../../src/Game/Chatting.h \
  ../../../src/Game/Switches.h ../../../src/Game/Key.h \
@@ -269,10 +272,15 @@ libhw_SDL_a-main.o: ../../../src/SDL/main.c /usr/include/stdc-predef.h \
  ../../../src/SDL/utility.h ../../../src/Game/Region.h \
  ../../../src/SDL/TitanInterfaceC.h
 /usr/include/stdc-predef.h:
-/usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
-/usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
-/usr/include/limits.h:
-/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
+/usr/include/SDL2/SDL.h:
+/usr/include/SDL2/SDL_main.h:
+/usr/include/SDL2/SDL_stdinc.h:
+/usr/include/SDL2/SDL_config.h:
+/usr/include/x86_64-linux-gnu/SDL2/_real_SDL_config.h:
+/usr/include/SDL2/SDL_platform.h:
+/usr/include/SDL2/begin_code.h:
+/usr/include/SDL2/close_code.h:
+/usr/include/x86_64-linux-gnu/sys/types.h:
 /usr/include/features.h:
 /usr/include/features-time64.h:
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
@@ -281,36 +289,14 @@ libhw_SDL_a-main.o: ../../../src/SDL/main.c /usr/include/stdc-predef.h \
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
-/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
-/usr/include/x86_64-linux-gnu/bits/local_lim.h:
-/usr/include/linux/limits.h:
-/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
-/usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h:
-/usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
-/usr/include/stdio.h:
-/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:
-/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
 /usr/include/x86_64-linux-gnu/bits/types.h:
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 /usr/include/x86_64-linux-gnu/bits/time64.h:
-/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
-/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
-/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
-/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
-/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
-/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
-/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
-/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-/usr/include/x86_64-linux-gnu/bits/stdio.h:
-/usr/include/stdlib.h:
-/usr/include/x86_64-linux-gnu/bits/waitflags.h:
-/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
-/usr/include/x86_64-linux-gnu/sys/types.h:
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 /usr/include/endian.h:
 /usr/include/x86_64-linux-gnu/bits/endian.h:
@@ -323,35 +309,45 @@ libhw_SDL_a-main.o: ../../../src/SDL/main.c /usr/include/stdc-predef.h \
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+/usr/include/x86_64-linux-gnu/bits/select2.h:
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+/usr/include/stdio.h:
+/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
+/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
+/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
+/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
+/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
+/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+/usr/include/x86_64-linux-gnu/bits/stdio.h:
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:
+/usr/include/stdlib.h:
+/usr/include/x86_64-linux-gnu/bits/waitflags.h:
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 /usr/include/alloca.h:
 /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+/usr/include/x86_64-linux-gnu/bits/stdlib.h:
 /usr/include/string.h:
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 /usr/include/strings.h:
-/usr/include/time.h:
-/usr/include/x86_64-linux-gnu/bits/time.h:
-/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
-/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
-/usr/include/SDL2/SDL.h:
-/usr/include/SDL2/SDL_main.h:
-/usr/include/SDL2/SDL_stdinc.h:
-/usr/include/SDL2/SDL_config.h:
-/usr/include/x86_64-linux-gnu/SDL2/_real_SDL_config.h:
-/usr/include/SDL2/SDL_platform.h:
-/usr/include/SDL2/begin_code.h:
-/usr/include/SDL2/close_code.h:
+/usr/include/x86_64-linux-gnu/bits/strings_fortified.h:
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:
 /usr/include/wchar.h:
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
+/usr/include/x86_64-linux-gnu/bits/wchar2.h:
 /usr/include/inttypes.h:
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h:
 /usr/include/stdint.h:
@@ -479,6 +475,7 @@ libhw_SDL_a-main.o: ../../../src/SDL/main.c /usr/include/stdc-predef.h \
 /usr/include/SDL2/SDL_touch.h:
 /usr/include/SDL2/SDL_filesystem.h:
 /usr/include/SDL2/SDL_haptic.h:
+/usr/include/SDL2/SDL_hidapi.h:
 /usr/include/SDL2/SDL_hints.h:
 /usr/include/SDL2/SDL_loadso.h:
 /usr/include/SDL2/SDL_log.h:
@@ -492,6 +489,19 @@ libhw_SDL_a-main.o: ../../../src/SDL/main.c /usr/include/stdc-predef.h \
 /usr/include/SDL2/SDL_version.h:
 /usr/include/SDL2/SDL_locale.h:
 /usr/include/SDL2/SDL_misc.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
+/usr/include/limits.h:
+/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
+/usr/include/x86_64-linux-gnu/bits/local_lim.h:
+/usr/include/linux/limits.h:
+/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
+/usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h:
+/usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
+/usr/include/time.h:
+/usr/include/x86_64-linux-gnu/bits/time.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 ../../../src/Game/AIPlayer.h:
 ../../../src/Game/AITeam.h:
 ../../../src/Game/AIEvents.h:
@@ -584,13 +594,13 @@ libhw_SDL_a-main.o: ../../../src/SDL/main.c /usr/include/stdc-predef.h \
 /usr/include/x86_64-linux-gnu/bits/dirent.h:
 /usr/include/x86_64-linux-gnu/bits/dirent_ext.h:
 /usr/include/unistd.h:
-/usr/include/x86_64-linux-gnu/sys/sysmacros.h:
-/usr/include/x86_64-linux-gnu/bits/sysmacros.h:
 /usr/include/x86_64-linux-gnu/bits/posix_opt.h:
 /usr/include/x86_64-linux-gnu/bits/environments.h:
 /usr/include/x86_64-linux-gnu/bits/confname.h:
 /usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
 /usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+/usr/include/x86_64-linux-gnu/bits/unistd.h:
+/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
 /usr/include/x86_64-linux-gnu/sys/time.h:
 ../../../src/Game/FontReg.h:
 ../../../src/Game/Formation.h:
@@ -598,9 +608,7 @@ libhw_SDL_a-main.o: ../../../src/SDL/main.c /usr/include/stdc-predef.h \
 /usr/include/GL/glew.h:
 /usr/include/GL/glu.h:
 /usr/include/GL/gl.h:
-/usr/local/include/SDL2/SDL.h:
-/usr/local/include/SDL2/SDL_opengl.h:
-/usr/local/include/SDL2/SDL_config.h:
+/usr/include/SDL2/SDL_opengl.h:
 ../../../src/Game/Globals.h:
 ../../../src/Game/HorseRace.h:
 ../../../src/Game/CommandNetwork.h:

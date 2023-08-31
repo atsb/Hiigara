@@ -1,10 +1,5 @@
 #include <string.h>
 #include <stdio.h>
-#include "SDL.h"
-#include "SDL_thread.h"
-#ifdef HW_ENABLE_NETWORK
-#include "SDL_net.h"
-#endif
 #include "NetworkInterface.h"
 
 #ifdef HW_ENABLE_NETWORK

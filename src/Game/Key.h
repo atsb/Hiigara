@@ -7,13 +7,8 @@
 #ifndef ___KEY_H
 #define ___KEY_H
 
-#ifdef __APPLE__
 #include <SDL2/SDL_scancode.h>
 #include <SDL2/SDL_keycode.h>
-#else
-#include "SDL_scancode.h"
-#include "SDL_keycode.h"
-#endif
 
 #include "Types.h"
 

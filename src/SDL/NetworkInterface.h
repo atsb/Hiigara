@@ -1,10 +1,10 @@
 #ifndef ___NETWORKINTERFACE_H
 #define ___NETWORKINTERFACE_H
 
-#include "SDL.h"
-#include "SDL_thread.h"
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_thread.h>
 #ifdef HW_ENABLE_NETWORK
-#include "SDL_net.h"
+#include <SDL2/SDL_net.h>
 
 typedef struct IpElemTmp { IPaddress IP; struct IpElemTmp *nextIP; } IpElem;
 

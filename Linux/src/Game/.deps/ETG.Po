@@ -168,14 +168,14 @@ ETG.o: ../../../src/Game/ETG.c /usr/include/stdc-predef.h \
  /usr/include/SDL2/SDL_sensor.h /usr/include/SDL2/SDL_quit.h \
  /usr/include/SDL2/SDL_gesture.h /usr/include/SDL2/SDL_touch.h \
  /usr/include/SDL2/SDL_filesystem.h /usr/include/SDL2/SDL_haptic.h \
- /usr/include/SDL2/SDL_hints.h /usr/include/SDL2/SDL_loadso.h \
- /usr/include/SDL2/SDL_log.h /usr/include/SDL2/SDL_messagebox.h \
- /usr/include/SDL2/SDL_metal.h /usr/include/SDL2/SDL_power.h \
- /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_shape.h \
- /usr/include/SDL2/SDL_system.h /usr/include/SDL2/SDL_timer.h \
- /usr/include/SDL2/SDL_version.h /usr/include/SDL2/SDL_locale.h \
- /usr/include/SDL2/SDL_misc.h /usr/include/SDL2/SDL_stdinc.h \
- /usr/include/SDL2/SDL_endian.h \
+ /usr/include/SDL2/SDL_hidapi.h /usr/include/SDL2/SDL_hints.h \
+ /usr/include/SDL2/SDL_loadso.h /usr/include/SDL2/SDL_log.h \
+ /usr/include/SDL2/SDL_messagebox.h /usr/include/SDL2/SDL_metal.h \
+ /usr/include/SDL2/SDL_power.h /usr/include/SDL2/SDL_render.h \
+ /usr/include/SDL2/SDL_shape.h /usr/include/SDL2/SDL_system.h \
+ /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
+ /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
+ /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_endian.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
@@ -207,46 +207,45 @@ ETG.o: ../../../src/Game/ETG.c /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/struct_stat.h /usr/include/dirent.h \
  /usr/include/x86_64-linux-gnu/bits/dirent.h \
  /usr/include/x86_64-linux-gnu/bits/dirent_ext.h /usr/include/unistd.h \
- /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
- /usr/include/x86_64-linux-gnu/bits/sysmacros.h \
  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
  /usr/include/x86_64-linux-gnu/sys/time.h ../../../src/SDL/glinc.h \
  /usr/include/GL/glew.h /usr/include/GL/glu.h /usr/include/GL/gl.h \
- /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_opengl.h \
- ../../../src/Game/HorseRace.h ../../../src/Game/CommandNetwork.h \
- ../../../src/Game/Captaincy.h ../../../src/Game/Chatting.h \
- ../../../src/Game/CommandLayer.h ../../../src/Game/Dock.h \
- ../../../src/SDL/render.h ../../../src/Game/Camera.h \
- ../../../src/Game/Color.h ../../../src/Game/Matrix.h \
- ../../../src/Game/SpaceObj.h ../../../src/Game/Task.h \
- ../../../src/Game/ShipSelect.h ../../../src/Game/Formation.h \
- ../../../src/Game/FormationDefs.h ../../../src/Game/ResCollect.h \
- ../../../src/Game/Attributes.h ../../../src/Game/Switches.h \
- ../../../src/Game/Task.h ../../../src/SDL/mainrgn.h \
- ../../../src/Game/FEFlow.h ../../../src/Game/Region.h \
- ../../../src/Game/Memory.h ../../../src/Game/Key.h \
- /usr/include/SDL2/SDL_scancode.h /usr/include/SDL2/SDL_keycode.h \
- ../../../src/SDL/prim2d.h ../../../src/SDL/main.h \
- ../../../src/SDL/mainswitches.h ../../../src/Game/MaxMultiplayer.h \
- ../../../src/Game/MEX.h ../../../src/Game/Particle.h \
- ../../../src/SDL/texreg.h ../../../src/Game/Randy.h \
- ../../../src/Game/Select.h ../../../src/Game/PiePlate.h \
- ../../../src/Game/Camera.h ../../../src/SDL/font.h \
- ../../../src/SDL/prim2d.h ../../../src/Game/SoundEvent.h \
- ../../../src/Game/SoundEventDefs.h ../../../src/Game/SoundMusic.h \
- ../../../src/Game/SpeechEvent.h ../../../src/Game/StatScript.h \
- ../../../src/Game/Tweak.h ../../../src/Game/Universe.h \
- ../../../src/Game/CameraCommand.h ../../../src/Game/ConsMgr.h \
- ../../../src/Game/GameStats.h ../../../src/Game/ResearchAPI.h \
- ../../../src/Game/Star3d.h ../../../src/Game/UnivUpdate.h \
- ../../../src/SDL/utility.h ../../../src/Game/ObjTypes.h \
- ../../../src/Game/Region.h ../../../src/SDL/TitanInterfaceC.h \
- ../../../src/Game/functions.h ../../../src/Game/wrap_types.h \
- ../../../src/Game/wrap.h ../../../src/Game/wrapped_unlisted_functions.h
+ /usr/include/SDL2/SDL_opengl.h ../../../src/Game/HorseRace.h \
+ ../../../src/Game/CommandNetwork.h ../../../src/Game/Captaincy.h \
+ ../../../src/Game/Chatting.h ../../../src/Game/CommandLayer.h \
+ ../../../src/Game/Dock.h ../../../src/SDL/render.h \
+ ../../../src/Game/Camera.h ../../../src/Game/Color.h \
+ ../../../src/Game/Matrix.h ../../../src/Game/SpaceObj.h \
+ ../../../src/Game/Task.h ../../../src/Game/ShipSelect.h \
+ ../../../src/Game/Formation.h ../../../src/Game/FormationDefs.h \
+ ../../../src/Game/ResCollect.h ../../../src/Game/Attributes.h \
+ ../../../src/Game/Switches.h ../../../src/Game/Task.h \
+ ../../../src/SDL/mainrgn.h ../../../src/Game/FEFlow.h \
+ ../../../src/Game/Region.h ../../../src/Game/Memory.h \
+ ../../../src/Game/Key.h /usr/include/SDL2/SDL_scancode.h \
+ /usr/include/SDL2/SDL_keycode.h ../../../src/SDL/prim2d.h \
+ ../../../src/SDL/main.h ../../../src/SDL/mainswitches.h \
+ ../../../src/Game/MaxMultiplayer.h ../../../src/Game/MEX.h \
+ ../../../src/Game/Particle.h ../../../src/SDL/texreg.h \
+ ../../../src/Game/Randy.h ../../../src/Game/Select.h \
+ ../../../src/Game/PiePlate.h ../../../src/Game/Camera.h \
+ ../../../src/SDL/font.h ../../../src/SDL/prim2d.h \
+ ../../../src/Game/SoundEvent.h ../../../src/Game/SoundEventDefs.h \
+ ../../../src/Game/SoundMusic.h ../../../src/Game/SpeechEvent.h \
+ ../../../src/Game/StatScript.h ../../../src/Game/Tweak.h \
+ ../../../src/Game/Universe.h ../../../src/Game/CameraCommand.h \
+ ../../../src/Game/ConsMgr.h ../../../src/Game/GameStats.h \
+ ../../../src/Game/ResearchAPI.h ../../../src/Game/Star3d.h \
+ ../../../src/Game/UnivUpdate.h ../../../src/SDL/utility.h \
+ ../../../src/Game/ObjTypes.h ../../../src/Game/Region.h \
+ ../../../src/SDL/TitanInterfaceC.h ../../../src/Game/functions.h \
+ ../../../src/Game/wrap_types.h ../../../src/Game/wrap.h \
+ ../../../src/Game/wrapped_unlisted_functions.h
 /usr/include/stdc-predef.h:
 ../../../src/Game/ETG.h:
 ../../../src/Game/ClassDefs.h:
@@ -447,6 +446,7 @@ ETG.o: ../../../src/Game/ETG.c /usr/include/stdc-predef.h \
 /usr/include/SDL2/SDL_touch.h:
 /usr/include/SDL2/SDL_filesystem.h:
 /usr/include/SDL2/SDL_haptic.h:
+/usr/include/SDL2/SDL_hidapi.h:
 /usr/include/SDL2/SDL_hints.h:
 /usr/include/SDL2/SDL_loadso.h:
 /usr/include/SDL2/SDL_log.h:
@@ -512,19 +512,17 @@ ETG.o: ../../../src/Game/ETG.c /usr/include/stdc-predef.h \
 /usr/include/x86_64-linux-gnu/bits/dirent.h:
 /usr/include/x86_64-linux-gnu/bits/dirent_ext.h:
 /usr/include/unistd.h:
-/usr/include/x86_64-linux-gnu/sys/sysmacros.h:
-/usr/include/x86_64-linux-gnu/bits/sysmacros.h:
 /usr/include/x86_64-linux-gnu/bits/posix_opt.h:
 /usr/include/x86_64-linux-gnu/bits/environments.h:
 /usr/include/x86_64-linux-gnu/bits/confname.h:
 /usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
 /usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
 /usr/include/x86_64-linux-gnu/sys/time.h:
 ../../../src/SDL/glinc.h:
 /usr/include/GL/glew.h:
 /usr/include/GL/glu.h:
 /usr/include/GL/gl.h:
-/usr/include/SDL2/SDL.h:
 /usr/include/SDL2/SDL_opengl.h:
 ../../../src/Game/HorseRace.h:
 ../../../src/Game/CommandNetwork.h:

@@ -1,14 +1,13 @@
 libhw_SDL_a-render.o: ../../../src/SDL/render.c \
  /usr/include/stdc-predef.h ../../../src/SDL/render.h \
  ../../../src/Game/Camera.h ../../../src/Game/Vector.h \
- ../../../src/Game/Types.h /usr/local/include/SDL2/SDL.h \
- /usr/local/include/SDL2/SDL_main.h /usr/local/include/SDL2/SDL_stdinc.h \
- /usr/local/include/SDL2/SDL_config.h \
- /usr/local/include/SDL2/SDL_platform.h \
- /usr/local/include/SDL2/begin_code.h \
- /usr/local/include/SDL2/close_code.h \
- /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/features.h \
- /usr/include/features-time64.h \
+ ../../../src/Game/Types.h /usr/include/SDL2/SDL.h \
+ /usr/include/SDL2/SDL_main.h /usr/include/SDL2/SDL_stdinc.h \
+ /usr/include/SDL2/SDL_config.h \
+ /usr/include/x86_64-linux-gnu/SDL2/_real_SDL_config.h \
+ /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
+ /usr/include/SDL2/close_code.h /usr/include/x86_64-linux-gnu/sys/types.h \
+ /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/bits/timesize.h \
  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -34,6 +33,7 @@ libhw_SDL_a-render.o: ../../../src/SDL/render.c \
  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+ /usr/include/x86_64-linux-gnu/bits/select2.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
@@ -51,18 +51,22 @@ libhw_SDL_a-render.o: ../../../src/SDL/render.c \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
- /usr/include/x86_64-linux-gnu/bits/stdio.h /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio2.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-float.h /usr/include/string.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib.h /usr/include/string.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/strings.h /usr/include/wchar.h \
- /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/include/strings.h \
+ /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
+ /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
+ /usr/include/wchar.h /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
- /usr/include/inttypes.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar2.h /usr/include/inttypes.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h /usr/include/ctype.h \
  /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -73,13 +77,12 @@ libhw_SDL_a-render.o: ../../../src/SDL/render.c \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
- /usr/local/include/SDL2/SDL_assert.h \
- /usr/local/include/SDL2/SDL_atomic.h /usr/local/include/SDL2/SDL_audio.h \
- /usr/local/include/SDL2/SDL_error.h /usr/local/include/SDL2/SDL_endian.h \
- /usr/local/include/SDL2/SDL_mutex.h /usr/local/include/SDL2/SDL_thread.h \
- /usr/local/include/SDL2/SDL_rwops.h \
- /usr/local/include/SDL2/SDL_clipboard.h \
- /usr/local/include/SDL2/SDL_cpuinfo.h \
+ /usr/include/SDL2/SDL_assert.h /usr/include/SDL2/SDL_atomic.h \
+ /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/SDL_audio.h \
+ /usr/include/SDL2/SDL_error.h /usr/include/SDL2/SDL_endian.h \
+ /usr/include/SDL2/SDL_mutex.h /usr/include/SDL2/SDL_thread.h \
+ /usr/include/SDL2/SDL_rwops.h /usr/include/SDL2/SDL_clipboard.h \
+ /usr/include/SDL2/SDL_cpuinfo.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/x86gprintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/ia32intrin.h \
@@ -164,32 +167,23 @@ libhw_SDL_a-render.o: ../../../src/SDL/render.c \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/amxbf16intrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/prfchwintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/keylockerintrin.h \
- /usr/local/include/SDL2/SDL_events.h /usr/local/include/SDL2/SDL_video.h \
- /usr/local/include/SDL2/SDL_pixels.h /usr/local/include/SDL2/SDL_rect.h \
- /usr/local/include/SDL2/SDL_surface.h \
- /usr/local/include/SDL2/SDL_blendmode.h \
- /usr/local/include/SDL2/SDL_keyboard.h \
- /usr/local/include/SDL2/SDL_keycode.h \
- /usr/local/include/SDL2/SDL_scancode.h \
- /usr/local/include/SDL2/SDL_mouse.h \
- /usr/local/include/SDL2/SDL_joystick.h \
- /usr/local/include/SDL2/SDL_guid.h \
- /usr/local/include/SDL2/SDL_gamecontroller.h \
- /usr/local/include/SDL2/SDL_sensor.h /usr/local/include/SDL2/SDL_quit.h \
- /usr/local/include/SDL2/SDL_gesture.h \
- /usr/local/include/SDL2/SDL_touch.h \
- /usr/local/include/SDL2/SDL_filesystem.h \
- /usr/local/include/SDL2/SDL_haptic.h \
- /usr/local/include/SDL2/SDL_hidapi.h /usr/local/include/SDL2/SDL_hints.h \
- /usr/local/include/SDL2/SDL_loadso.h /usr/local/include/SDL2/SDL_log.h \
- /usr/local/include/SDL2/SDL_messagebox.h \
- /usr/local/include/SDL2/SDL_metal.h /usr/local/include/SDL2/SDL_power.h \
- /usr/local/include/SDL2/SDL_render.h /usr/local/include/SDL2/SDL_shape.h \
- /usr/local/include/SDL2/SDL_system.h /usr/local/include/SDL2/SDL_timer.h \
- /usr/local/include/SDL2/SDL_version.h \
- /usr/local/include/SDL2/SDL_locale.h /usr/local/include/SDL2/SDL_misc.h \
- /usr/local/include/SDL2/SDL_stdinc.h \
- /usr/local/include/SDL2/SDL_endian.h \
+ /usr/include/SDL2/SDL_events.h /usr/include/SDL2/SDL_video.h \
+ /usr/include/SDL2/SDL_pixels.h /usr/include/SDL2/SDL_rect.h \
+ /usr/include/SDL2/SDL_surface.h /usr/include/SDL2/SDL_blendmode.h \
+ /usr/include/SDL2/SDL_keyboard.h /usr/include/SDL2/SDL_keycode.h \
+ /usr/include/SDL2/SDL_scancode.h /usr/include/SDL2/SDL_mouse.h \
+ /usr/include/SDL2/SDL_joystick.h /usr/include/SDL2/SDL_gamecontroller.h \
+ /usr/include/SDL2/SDL_sensor.h /usr/include/SDL2/SDL_quit.h \
+ /usr/include/SDL2/SDL_gesture.h /usr/include/SDL2/SDL_touch.h \
+ /usr/include/SDL2/SDL_filesystem.h /usr/include/SDL2/SDL_haptic.h \
+ /usr/include/SDL2/SDL_hidapi.h /usr/include/SDL2/SDL_hints.h \
+ /usr/include/SDL2/SDL_loadso.h /usr/include/SDL2/SDL_log.h \
+ /usr/include/SDL2/SDL_messagebox.h /usr/include/SDL2/SDL_metal.h \
+ /usr/include/SDL2/SDL_power.h /usr/include/SDL2/SDL_render.h \
+ /usr/include/SDL2/SDL_shape.h /usr/include/SDL2/SDL_system.h \
+ /usr/include/SDL2/SDL_timer.h /usr/include/SDL2/SDL_version.h \
+ /usr/include/SDL2/SDL_locale.h /usr/include/SDL2/SDL_misc.h \
+ /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_endian.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
@@ -226,8 +220,8 @@ libhw_SDL_a-render.o: ../../../src/SDL/render.c \
  ../../../src/Game/Task.h ../../../src/Game/Debug.h \
  ../../../src/Ships/DefenseFighter.h ../../../src/Game/FlightMan.h \
  ../../../src/Game/FlightManDefs.h ../../../src/Game/Demo.h \
- ../../../src/Game/Key.h /usr/local/include/SDL2/SDL_scancode.h \
- /usr/local/include/SDL2/SDL_keycode.h ../../../src/Game/Randy.h \
+ ../../../src/Game/Key.h /usr/include/SDL2/SDL_scancode.h \
+ /usr/include/SDL2/SDL_keycode.h ../../../src/Game/Randy.h \
  ../../../src/SDL/devstats.h ../../../src/Game/Dock.h \
  ../../../src/Game/FastMath.h ../../../src/Game/File.h \
  ../../../src/Game/BigFile.h ../../../src/SDL/standard_library.h \
@@ -239,20 +233,20 @@ libhw_SDL_a-render.o: ../../../src/SDL/render.c \
  /usr/include/x86_64-linux-gnu/bits/struct_stat.h /usr/include/dirent.h \
  /usr/include/x86_64-linux-gnu/bits/dirent.h \
  /usr/include/x86_64-linux-gnu/bits/dirent_ext.h /usr/include/unistd.h \
- /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
- /usr/include/x86_64-linux-gnu/bits/sysmacros.h \
  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
  /usr/include/x86_64-linux-gnu/sys/time.h ../../../src/SDL/font.h \
  ../../../src/SDL/prim2d.h ../../../src/SDL/main.h \
  ../../../src/SDL/mainswitches.h ../../../src/Game/MaxMultiplayer.h \
  ../../../src/SDL/glinc.h /usr/include/GL/glew.h /usr/include/GL/glu.h \
- /usr/include/GL/gl.h /usr/local/include/SDL2/SDL.h \
- /usr/local/include/SDL2/SDL_opengl.h ../../../src/Game/Globals.h \
- ../../../src/Game/Gun.h ../../../src/Game/HS.h ../../../src/Game/Key.h \
+ /usr/include/GL/gl.h /usr/include/SDL2/SDL_opengl.h \
+ ../../../src/Game/Globals.h ../../../src/Game/Gun.h \
+ ../../../src/Game/HS.h ../../../src/Game/Key.h \
  ../../../src/Game/LagPrint.h ../../../src/Game/LaunchMgr.h \
  ../../../src/Game/Region.h ../../../src/Game/Memory.h \
  ../../../src/SDL/prim2d.h ../../../src/Game/Light.h \
@@ -295,13 +289,14 @@ libhw_SDL_a-render.o: ../../../src/SDL/render.c \
 ../../../src/Game/Camera.h:
 ../../../src/Game/Vector.h:
 ../../../src/Game/Types.h:
-/usr/local/include/SDL2/SDL.h:
-/usr/local/include/SDL2/SDL_main.h:
-/usr/local/include/SDL2/SDL_stdinc.h:
-/usr/local/include/SDL2/SDL_config.h:
-/usr/local/include/SDL2/SDL_platform.h:
-/usr/local/include/SDL2/begin_code.h:
-/usr/local/include/SDL2/close_code.h:
+/usr/include/SDL2/SDL.h:
+/usr/include/SDL2/SDL_main.h:
+/usr/include/SDL2/SDL_stdinc.h:
+/usr/include/SDL2/SDL_config.h:
+/usr/include/x86_64-linux-gnu/SDL2/_real_SDL_config.h:
+/usr/include/SDL2/SDL_platform.h:
+/usr/include/SDL2/begin_code.h:
+/usr/include/SDL2/close_code.h:
 /usr/include/x86_64-linux-gnu/sys/types.h:
 /usr/include/features.h:
 /usr/include/features-time64.h:
@@ -331,6 +326,7 @@ libhw_SDL_a-render.o: ../../../src/SDL/render.c \
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+/usr/include/x86_64-linux-gnu/bits/select2.h:
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
@@ -350,20 +346,25 @@ libhw_SDL_a-render.o: ../../../src/SDL/render.c \
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 /usr/include/x86_64-linux-gnu/bits/stdio.h:
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:
 /usr/include/stdlib.h:
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 /usr/include/alloca.h:
 /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+/usr/include/x86_64-linux-gnu/bits/stdlib.h:
 /usr/include/string.h:
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 /usr/include/strings.h:
+/usr/include/x86_64-linux-gnu/bits/strings_fortified.h:
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:
 /usr/include/wchar.h:
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
+/usr/include/x86_64-linux-gnu/bits/wchar2.h:
 /usr/include/inttypes.h:
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h:
 /usr/include/stdint.h:
@@ -378,16 +379,17 @@ libhw_SDL_a-render.o: ../../../src/SDL/render.c \
 /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h:
-/usr/local/include/SDL2/SDL_assert.h:
-/usr/local/include/SDL2/SDL_atomic.h:
-/usr/local/include/SDL2/SDL_audio.h:
-/usr/local/include/SDL2/SDL_error.h:
-/usr/local/include/SDL2/SDL_endian.h:
-/usr/local/include/SDL2/SDL_mutex.h:
-/usr/local/include/SDL2/SDL_thread.h:
-/usr/local/include/SDL2/SDL_rwops.h:
-/usr/local/include/SDL2/SDL_clipboard.h:
-/usr/local/include/SDL2/SDL_cpuinfo.h:
+/usr/include/SDL2/SDL_assert.h:
+/usr/include/SDL2/SDL_atomic.h:
+/usr/include/SDL2/SDL_platform.h:
+/usr/include/SDL2/SDL_audio.h:
+/usr/include/SDL2/SDL_error.h:
+/usr/include/SDL2/SDL_endian.h:
+/usr/include/SDL2/SDL_mutex.h:
+/usr/include/SDL2/SDL_thread.h:
+/usr/include/SDL2/SDL_rwops.h:
+/usr/include/SDL2/SDL_clipboard.h:
+/usr/include/SDL2/SDL_cpuinfo.h:
 /usr/lib/gcc/x86_64-linux-gnu/11/include/immintrin.h:
 /usr/lib/gcc/x86_64-linux-gnu/11/include/x86gprintrin.h:
 /usr/lib/gcc/x86_64-linux-gnu/11/include/ia32intrin.h:
@@ -472,41 +474,40 @@ libhw_SDL_a-render.o: ../../../src/SDL/render.c \
 /usr/lib/gcc/x86_64-linux-gnu/11/include/amxbf16intrin.h:
 /usr/lib/gcc/x86_64-linux-gnu/11/include/prfchwintrin.h:
 /usr/lib/gcc/x86_64-linux-gnu/11/include/keylockerintrin.h:
-/usr/local/include/SDL2/SDL_events.h:
-/usr/local/include/SDL2/SDL_video.h:
-/usr/local/include/SDL2/SDL_pixels.h:
-/usr/local/include/SDL2/SDL_rect.h:
-/usr/local/include/SDL2/SDL_surface.h:
-/usr/local/include/SDL2/SDL_blendmode.h:
-/usr/local/include/SDL2/SDL_keyboard.h:
-/usr/local/include/SDL2/SDL_keycode.h:
-/usr/local/include/SDL2/SDL_scancode.h:
-/usr/local/include/SDL2/SDL_mouse.h:
-/usr/local/include/SDL2/SDL_joystick.h:
-/usr/local/include/SDL2/SDL_guid.h:
-/usr/local/include/SDL2/SDL_gamecontroller.h:
-/usr/local/include/SDL2/SDL_sensor.h:
-/usr/local/include/SDL2/SDL_quit.h:
-/usr/local/include/SDL2/SDL_gesture.h:
-/usr/local/include/SDL2/SDL_touch.h:
-/usr/local/include/SDL2/SDL_filesystem.h:
-/usr/local/include/SDL2/SDL_haptic.h:
-/usr/local/include/SDL2/SDL_hidapi.h:
-/usr/local/include/SDL2/SDL_hints.h:
-/usr/local/include/SDL2/SDL_loadso.h:
-/usr/local/include/SDL2/SDL_log.h:
-/usr/local/include/SDL2/SDL_messagebox.h:
-/usr/local/include/SDL2/SDL_metal.h:
-/usr/local/include/SDL2/SDL_power.h:
-/usr/local/include/SDL2/SDL_render.h:
-/usr/local/include/SDL2/SDL_shape.h:
-/usr/local/include/SDL2/SDL_system.h:
-/usr/local/include/SDL2/SDL_timer.h:
-/usr/local/include/SDL2/SDL_version.h:
-/usr/local/include/SDL2/SDL_locale.h:
-/usr/local/include/SDL2/SDL_misc.h:
-/usr/local/include/SDL2/SDL_stdinc.h:
-/usr/local/include/SDL2/SDL_endian.h:
+/usr/include/SDL2/SDL_events.h:
+/usr/include/SDL2/SDL_video.h:
+/usr/include/SDL2/SDL_pixels.h:
+/usr/include/SDL2/SDL_rect.h:
+/usr/include/SDL2/SDL_surface.h:
+/usr/include/SDL2/SDL_blendmode.h:
+/usr/include/SDL2/SDL_keyboard.h:
+/usr/include/SDL2/SDL_keycode.h:
+/usr/include/SDL2/SDL_scancode.h:
+/usr/include/SDL2/SDL_mouse.h:
+/usr/include/SDL2/SDL_joystick.h:
+/usr/include/SDL2/SDL_gamecontroller.h:
+/usr/include/SDL2/SDL_sensor.h:
+/usr/include/SDL2/SDL_quit.h:
+/usr/include/SDL2/SDL_gesture.h:
+/usr/include/SDL2/SDL_touch.h:
+/usr/include/SDL2/SDL_filesystem.h:
+/usr/include/SDL2/SDL_haptic.h:
+/usr/include/SDL2/SDL_hidapi.h:
+/usr/include/SDL2/SDL_hints.h:
+/usr/include/SDL2/SDL_loadso.h:
+/usr/include/SDL2/SDL_log.h:
+/usr/include/SDL2/SDL_messagebox.h:
+/usr/include/SDL2/SDL_metal.h:
+/usr/include/SDL2/SDL_power.h:
+/usr/include/SDL2/SDL_render.h:
+/usr/include/SDL2/SDL_shape.h:
+/usr/include/SDL2/SDL_system.h:
+/usr/include/SDL2/SDL_timer.h:
+/usr/include/SDL2/SDL_version.h:
+/usr/include/SDL2/SDL_locale.h:
+/usr/include/SDL2/SDL_misc.h:
+/usr/include/SDL2/SDL_stdinc.h:
+/usr/include/SDL2/SDL_endian.h:
 /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
 /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
 /usr/include/limits.h:
@@ -573,8 +574,8 @@ libhw_SDL_a-render.o: ../../../src/SDL/render.c \
 ../../../src/Game/FlightManDefs.h:
 ../../../src/Game/Demo.h:
 ../../../src/Game/Key.h:
-/usr/local/include/SDL2/SDL_scancode.h:
-/usr/local/include/SDL2/SDL_keycode.h:
+/usr/include/SDL2/SDL_scancode.h:
+/usr/include/SDL2/SDL_keycode.h:
 ../../../src/Game/Randy.h:
 ../../../src/SDL/devstats.h:
 ../../../src/Game/Dock.h:
@@ -593,13 +594,13 @@ libhw_SDL_a-render.o: ../../../src/SDL/render.c \
 /usr/include/x86_64-linux-gnu/bits/dirent.h:
 /usr/include/x86_64-linux-gnu/bits/dirent_ext.h:
 /usr/include/unistd.h:
-/usr/include/x86_64-linux-gnu/sys/sysmacros.h:
-/usr/include/x86_64-linux-gnu/bits/sysmacros.h:
 /usr/include/x86_64-linux-gnu/bits/posix_opt.h:
 /usr/include/x86_64-linux-gnu/bits/environments.h:
 /usr/include/x86_64-linux-gnu/bits/confname.h:
 /usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
 /usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+/usr/include/x86_64-linux-gnu/bits/unistd.h:
+/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
 /usr/include/x86_64-linux-gnu/sys/time.h:
 ../../../src/SDL/font.h:
 ../../../src/SDL/prim2d.h:
@@ -610,8 +611,7 @@ libhw_SDL_a-render.o: ../../../src/SDL/render.c \
 /usr/include/GL/glew.h:
 /usr/include/GL/glu.h:
 /usr/include/GL/gl.h:
-/usr/local/include/SDL2/SDL.h:
-/usr/local/include/SDL2/SDL_opengl.h:
+/usr/include/SDL2/SDL_opengl.h:
 ../../../src/Game/Globals.h:
 ../../../src/Game/Gun.h:
 ../../../src/Game/HS.h:

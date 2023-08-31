@@ -1,11 +1,7 @@
 #ifndef ___SOUNDCMN_H
 #define ___SOUNDCMN_H
 
-#ifdef __APPLE__
 #include <SDL2/SDL.h>
-#else
-#include <SDL.h>
-#endif
 
 #include "File.h"
 #include "fqcodec.h"

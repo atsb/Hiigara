@@ -10,11 +10,7 @@
 /*#define WIN32_LEAN_AND_MEAN*/
 #define STRICT
 
-#ifdef __APPLE__
 #include <SDL2/SDL.h>
-#else
-#include <SDL.h>
-#endif
 
 #include <stdio.h>
 
