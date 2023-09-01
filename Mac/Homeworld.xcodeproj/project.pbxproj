@@ -15,7 +15,8 @@
 		1793E3EC2371F081006F67CB /* HomeworldSDL.big in Resources */ = {isa = PBXBuildFile; fileRef = 1793E3E42371F081006F67CB /* HomeworldSDL.big */; };
 		1793E3ED2371F081006F67CB /* HomeworldSDL.big in Resources */ = {isa = PBXBuildFile; fileRef = 1793E3E42371F081006F67CB /* HomeworldSDL.big */; };
 		1793E3EF2371F081006F67CB /* HW_Comp.vce in Resources */ = {isa = PBXBuildFile; fileRef = 1793E3E52371F081006F67CB /* HW_Comp.vce */; };
-		2AB71EF129E8862700F1A3F1 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB71EF029E8862600F1A3F1 /* SDL2.framework */; };
+		2A24E3552AA276FE0004766F /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB71EF029E8862600F1A3F1 /* SDL2.framework */; };
+		2A24E3562AA276FE0004766F /* SDL2.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2AB71EF029E8862600F1A3F1 /* SDL2.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2AD6F8C929E87101009B6324 /* TitanInterfaceC.stub.c in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6F8C829E87101009B6324 /* TitanInterfaceC.stub.c */; };
 		3507A51B0B0FA60200E374C5 /* Trails.c in Sources */ = {isa = PBXBuildFile; fileRef = 3507A5190B0FA60200E374C5 /* Trails.c */; };
 		3507A51D0B0FA60200E374C5 /* Trails.c in Sources */ = {isa = PBXBuildFile; fileRef = 3507A5190B0FA60200E374C5 /* Trails.c */; };
@@ -605,6 +606,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				2A24E3562AA276FE0004766F /* SDL2.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,6 +621,7 @@
 		1793E3E52371F081006F67CB /* HW_Comp.vce */ = {isa = PBXFileReference; lastKnownFileType = file; name = HW_Comp.vce; path = ../HW_Comp.vce; sourceTree = "<group>"; };
 		2A0824AB29E89139002BD9C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HomeworldPlist.strings; sourceTree = "<group>"; };
 		2A0824AC29E89139002BD9C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RaiderRetreatPlist.strings; sourceTree = "<group>"; };
+		2A24E3542AA276ED0004766F /* Homeworld.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Homeworld.entitlements; sourceTree = "<group>"; };
 		2AB71EF029E8862600F1A3F1 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2.framework; sourceTree = "<group>"; };
 		2AD6F8C829E87101009B6324 /* TitanInterfaceC.stub.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TitanInterfaceC.stub.c; sourceTree = "<group>"; };
 		3507A5190B0FA60200E374C5 /* Trails.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = Trails.c; sourceTree = "<group>"; };
@@ -1214,9 +1217,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A24E3552AA276FE0004766F /* SDL2.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				35E8607713487BD10079E9AB /* OpenGL.framework in Frameworks */,
-				2AB71EF129E8862700F1A3F1 /* SDL2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1245,6 +1248,7 @@
 		29B97314FDCFA39411CA2CEA /* Homeworld */ = {
 			isa = PBXGroup;
 			children = (
+				2A24E3542AA276ED0004766F /* Homeworld.entitlements */,
 				90623BEA064992490088361C /* src */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -2907,8 +2911,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = Homeworld.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CURRENT_PROJECT_VERSION = "1.0-stable";
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2920,13 +2926,10 @@
 					HW_GAME_HOMEWORLD,
 				);
 				INFOPLIST_FILE = Homeworld.plist;
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks $(LD_RUNPATH_SEARCH_PATHS_$(IS_MACCATALYST))";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks $(LD_RUNPATH_SEARCH_PATHS_$(IS_MACCATALYST)) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				OTHER_CFLAGS = "-DHW_BUILD_FOR_DEBUGGING";
-				OTHER_CPLUSPLUSFLAGS = (
-					"$(OTHER_CFLAGS)",
-					"-I/opt/local/include",
-				);
+				OTHER_CPLUSPLUSFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hiigara.homeworld;
 				PRODUCT_NAME = Homeworld;
 				SDKROOT = macosx;
@@ -2938,8 +2941,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = Homeworld.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CURRENT_PROJECT_VERSION = "1.0-stable";
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2951,13 +2956,10 @@
 					HW_GAME_HOMEWORLD,
 				);
 				INFOPLIST_FILE = Homeworld.plist;
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks $(LD_RUNPATH_SEARCH_PATHS_$(IS_MACCATALYST))";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks $(LD_RUNPATH_SEARCH_PATHS_$(IS_MACCATALYST)) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				OTHER_CFLAGS = "-DHW_BUILD_FOR_DISTRIBUTION";
-				OTHER_CPLUSPLUSFLAGS = (
-					"$(OTHER_CFLAGS)",
-					"-I/opt/local/include",
-				);
+				OTHER_CPLUSPLUSFLAGS = "";
 				"OTHER_CPLUSPLUSFLAGS[arch=*]" = "$(OTHER_CFLAGS)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hiigara.homeworld;
 				PRODUCT_NAME = Homeworld;
@@ -2970,20 +2972,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = Homeworld.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CURRENT_PROJECT_VERSION = "1.0-stable";
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
 				);
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks $(LD_RUNPATH_SEARCH_PATHS_$(IS_MACCATALYST))";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks $(LD_RUNPATH_SEARCH_PATHS_$(IS_MACCATALYST)) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 11.5;
-				OTHER_CFLAGS = "-I/opt/local/include";
-				OTHER_CPLUSPLUSFLAGS = (
-					"$(OTHER_CFLAGS)",
-					"-I/opt/local/include",
-				);
+				OTHER_CFLAGS = "";
+				OTHER_CPLUSPLUSFLAGS = "";
 				"OTHER_CPLUSPLUSFLAGS[arch=*]" = "$(OTHER_CFLAGS)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hiigara.homeworld;
 				SDKROOT = macosx;
@@ -3069,7 +3070,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTABILITY = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3111,6 +3112,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3150,6 +3152,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
