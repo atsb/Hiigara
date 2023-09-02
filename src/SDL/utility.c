@@ -3847,7 +3847,7 @@ char* utyGameSystemsPreInit(void)
     utySet(SSA_MemoryHeap);
     if (memStartup(utyMemoryHeap, MemoryHeapSize, utyGrowthHeapAlloc) != OKAY)
     {
-        sprintf(errorString, "Error starting memory manager with heap size %u at 0x%x", MemoryHeapSize, (unsigned int)utyMemoryHeap);
+        sprintf(errorString, "Error starting memory manager with heap size %u at 0x%llx", MemoryHeapSize, (uint64_t)utyMemoryHeap);
         return(errorString);
     }
     utySet(SSA_MemoryModule);
@@ -3948,35 +3948,28 @@ char *utyGameSystemsInit(void)
         }
     }
 
-#if 0
-    // Joystick used for controlling the 3D camera view. It can be any old
-    // joystick but this is primarily intended to support devices used for
-    // 3D CAD applications which have more degrees of freedom (6) than typical
-    // joysticks (2). For example: 3Dconnexion's SpaceNavigator.
-    // http://www.3dconnexion.com/products/3a1d.php
-    if (!(sdlSubsystemFlags & SDL_INIT_JOYSTICK))
+    if (!(sdlSubsystemFlags & SDL_INIT_GAMECONTROLLER))
     {
-        int joystick_i = 0;
-
-        if (SDL_InitSubSystem(SDL_INIT_JOYSTICK) == -1)
+        if (SDL_InitSubSystem(SDL_INIT_GAMECONTROLLER) == -1)
         {
-            return "Unable to initialize SDL Joystick.";
+            return "Unable to initialize SDL GameController.";
         }
 
-        for (joystick_i = 0; joystick_i < SDL_NumJoysticks(); ++joystick_i)
+        int numGameControllers = SDL_NumJoysticks();
+
+        for (int i = 0; i < numGameControllers; ++i)
         {
-            if (strcmp(SDL_JoystickName(joystick_i), "SpaceNavigator") == 0)
+            if (SDL_IsGameController(i))
             {
-                SDL_Joystick *joystick;
+                SDL_GameController *controller = SDL_GameControllerOpen(i);
 
-                SDL_JoystickEventState(SDL_ENABLE);
-                joystick = SDL_JoystickOpen(joystick_i);
-
-                dbgMessagef("SpaceNavigator found at index %d", joystick_i);
+                if (controller)
+                {
+                    dbgMessagef("GameController found at index %d", i);
+                }
             }
         }
     }
-#endif
 
     utyTimerDivisor = 1000 / UTY_TimerResolutionMax;
     utySet(SSA_Timer);
