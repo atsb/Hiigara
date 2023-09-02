@@ -37,6 +37,6 @@ macOS users should perform
 1. Open the provided xcode project
 2. Build the project
 
-NOTE: macOS users, I strongly advise you to have macports and to have sdl2 development libs installed in /opt/local/include and /opt/local/lib.  This is the location that is hardcoded in kas2c, biggie and in the xcode project.  A universal SDL2.framework is already provided in the Mac directory.
+NOTE: macOS users, A universal SDL2.framework is already provided in the Mac directory.  You do not need anything else.
 
 Enjoy using Hiigara as much as I did porting it.
