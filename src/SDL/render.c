@@ -988,8 +988,8 @@ flags |= SDL_WINDOW_FULLSCREEN_DESKTOP; // ATSB: This is put back to allow prope
 		MAIN_WindowWidth, MAIN_WindowHeight, flags)))
 	{
 	    fprintf (stderr, "Couldn't set FSAA video mode: %s\n", SDL_GetError ());
-	    SDL_GL_SetAttribute( SDL_GL_MULTISAMPLEBUFFERS, 0 );
-	    SDL_GL_SetAttribute( SDL_GL_MULTISAMPLESAMPLES, 0 );
+	    SDL_GL_SetAttribute( SDL_GL_MULTISAMPLEBUFFERS, 1 );
+	    SDL_GL_SetAttribute( SDL_GL_MULTISAMPLESAMPLES, 4 );
 
 		if (!(sdlwindow=SDL_CreateWindow("Homeworld", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
 			MAIN_WindowWidth, MAIN_WindowHeight, flags)))
