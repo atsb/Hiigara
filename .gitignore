@@ -38,3 +38,7 @@
 *.ipch
 *.bin
 *.vsidx
+*.big
+*.wxd
+*.vce
+*.big
