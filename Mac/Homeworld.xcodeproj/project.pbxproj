@@ -18,6 +18,9 @@
 		2A24E3552AA276FE0004766F /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB71EF029E8862600F1A3F1 /* SDL2.framework */; };
 		2A24E3562AA276FE0004766F /* SDL2.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2AB71EF029E8862600F1A3F1 /* SDL2.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2AD6F8C929E87101009B6324 /* TitanInterfaceC.stub.c in Sources */ = {isa = PBXBuildFile; fileRef = 2AD6F8C829E87101009B6324 /* TitanInterfaceC.stub.c */; };
+		2AE297ED2AA38896003F7A58 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE297EC2AA38896003F7A58 /* OpenGL.framework */; };
+		2AE297F02AA38904003F7A58 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB71EF029E8862600F1A3F1 /* SDL2.framework */; };
+		2AE297F12AA38904003F7A58 /* SDL2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB71EF029E8862600F1A3F1 /* SDL2.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3507A51B0B0FA60200E374C5 /* Trails.c in Sources */ = {isa = PBXBuildFile; fileRef = 3507A5190B0FA60200E374C5 /* Trails.c */; };
 		3507A51D0B0FA60200E374C5 /* Trails.c in Sources */ = {isa = PBXBuildFile; fileRef = 3507A5190B0FA60200E374C5 /* Trails.c */; };
 		3507A57A0B0FBB0B00E374C5 /* Subtitle.c in Sources */ = {isa = PBXBuildFile; fileRef = 3507A5780B0FBB0B00E374C5 /* Subtitle.c */; };
@@ -610,6 +613,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2AE297F22AA38904003F7A58 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2AE297F12AA38904003F7A58 /* SDL2.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -624,6 +638,8 @@
 		2A24E3542AA276ED0004766F /* Homeworld.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Homeworld.entitlements; sourceTree = "<group>"; };
 		2AB71EF029E8862600F1A3F1 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDL2.framework; sourceTree = "<group>"; };
 		2AD6F8C829E87101009B6324 /* TitanInterfaceC.stub.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TitanInterfaceC.stub.c; sourceTree = "<group>"; };
+		2AE297EB2AA3881F003F7A58 /* Raider Retreat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Raider Retreat.entitlements"; sourceTree = "<group>"; };
+		2AE297EC2AA38896003F7A58 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		3507A5190B0FA60200E374C5 /* Trails.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = Trails.c; sourceTree = "<group>"; };
 		3507A51A0B0FA60200E374C5 /* Trails.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Trails.h; sourceTree = "<group>"; };
 		3507A5780B0FBB0B00E374C5 /* Subtitle.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = Subtitle.c; sourceTree = "<group>"; };
@@ -1209,6 +1225,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AE297F02AA38904003F7A58 /* SDL2.framework in Frameworks */,
+				2AE297ED2AA38896003F7A58 /* OpenGL.framework in Frameworks */,
 				3516CA6B077C41B0001AA863 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1248,6 +1266,7 @@
 		29B97314FDCFA39411CA2CEA /* Homeworld */ = {
 			isa = PBXGroup;
 			children = (
+				2AE297EB2AA3881F003F7A58 /* Raider Retreat.entitlements */,
 				2A24E3542AA276ED0004766F /* Homeworld.entitlements */,
 				90623BEA064992490088361C /* src */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -1289,6 +1308,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2AE297EC2AA38896003F7A58 /* OpenGL.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 			);
 			name = Frameworks;
@@ -1978,10 +1998,12 @@
 			buildConfigurationList = 35CC221F0955C2E100504293 /* Build configuration list for PBXNativeTarget "Raider Retreat" */;
 			buildPhases = (
 				35BE70E007937E0B00AEFC3C /* ShellScript */,
+				2AE297EF2AA388BB003F7A58 /* ShellScript */,
 				3516C942077C41B0001AA863 /* Resources */,
 				3516C946077C41B0001AA863 /* Sources */,
 				3516CA6A077C41B0001AA863 /* Frameworks */,
 				3507D89707996FCC00F093F4 /* ShellScript */,
+				2AE297F22AA38904003F7A58 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2089,6 +2111,23 @@
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/sh\n#Compile HomeworldSDL.big into repo root\ncd ../tools/biggie\n./biggie-MacOSX-compile.sh\ncd ../../HomeworldSDL_big\n./convert_directory_to_big_file\n";
 		};
+		2AE297EF2AA388BB003F7A58 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n#Compile HomeworldSDL.big into repo root\ncd ../tools/biggie\n./biggie-MacOSX-compile.sh\ncd ../../HomeworldSDL_big\n./convert_directory_to_big_file\n";
+		};
 		3507D813079955A400F093F4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
@@ -2115,7 +2154,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/zsh;
-			shellScript = "# force the shell; XCode really likes sh regardless of configuration\n/bin/zsh\n\ncase \"${BUILD_STYLE}\" in\n\n    Deployment)\n\n        # copy in the SDL framework\n        mkdir -p ./build/Deployment/Raider\\ Retreat.app/Contents/Frameworks\n        cp -pR /Library/Frameworks/SDL.framework ./build/Deployment/Raider\\ Retreat.app/Contents/Frameworks\n\n        # remove the SDL framework headers (and associated symlink)\n        rm -f  ./build/Deployment/Raider\\ Retreat.app/Contents/Frameworks/SDL.framework/Headers\n        rm -rf ./build/Deployment/Raider\\ Retreat.app/Contents/Frameworks/SDL.framework/Versions/Current/Headers\n\n        # rename InfoPlist.strings files correctly\n        # (why doesn't XCode do this when the 'Info.plist File' is set?)\n        find ./build/Deployment/Raider\\ Retreat.app/Contents/Resources/*.lproj -name RaiderRetreatPlist.strings -execdir mv {} InfoPlist.strings \\;\n\n        # clean up any Subversion files that may have been pulled in\n        find ./build/Deployment/Raider\\ Retreat.app/ -name '.svn' -exec rm -rf {} \\;\n\n        # clean up Mac OS X .DS_Store folder files\n        find ./build/Deployment/Raider\\ Retreat.app/ -name '.DS_Store' -exec rm {} \\;\n\n        # end of case condition\n        ;;\n\nesac";
+			shellScript = "# force the shell; XCode really likes sh regardless of configuration\n/bin/zsh\n\ncase \"${BUILD_STYLE}\" in\n\n    Deployment)\n\n        # copy in the SDL framework\n        mkdir -p ./build/Deployment/Raider\\ Retreat.app/Contents/Frameworks\n        cp -pR /Library/Frameworks/SDL.framework ./build/Deployment/Raider\\ Retreat.app/Contents/Frameworks\n\n        # remove the SDL framework headers (and associated symlink)\n        rm -f  ./build/Deployment/Raider\\ Retreat.app/Contents/Frameworks/SDL.framework/Headers\n        rm -rf ./build/Deployment/Raider\\ Retreat.app/Contents/Frameworks/SDL.framework/Versions/Current/Headers\n\n        # rename InfoPlist.strings files correctly\n        # (why doesn't XCode do this when the 'Info.plist File' is set?)\n        find ./build/Deployment/Raider\\ Retreat.app/Contents/Resources/*.lproj -name RaiderRetreatPlist.strings -execdir mv {} InfoPlist.strings \\;\n\n        # clean up any Subversion files that may have been pulled in\n        find ./build/Deployment/Raider\\ Retreat.app/ -name '.svn' -exec rm -rf {} \\;\n\n        # clean up Mac OS X .DS_Store folder files\n        find ./build/Deployment/Raider\\ Retreat.app/ -name '.DS_Store' -exec rm {} \\;\n\n        # end of case condition\n        ;;\n\nesac\n";
 		};
 		355BE77707935BD200F82BB0 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2291,7 +2330,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/zsh;
-			shellScript = "# force the shell; XCode really likes sh regardless of configuration\n/bin/zsh\n\n# make sure that kas2c is compiled\ncd ../tools/kas2c\n./kas2c-MacOSX-compile.sh\n\n# now compile the *.kas mission files\ncd ../../src/Missions\n\nfor Y in SinglePlayer Tutorials\ndo\n    # change to the .kas folders in turn\n    cd $Y\n\n    for X in *.kas\n    do\n        # get the mission name\n        `/bin/echo $X | /usr/bin/awk -F '\\.' '{print \"export MISSION=\" $1}'`\n\n        # use gcc's preprocessor to produce the input for kas2c; the grep -v is\n        # to strip a gcc #pragma that kas2c cannot cope with\n        /usr/bin/gcc -E -x c $MISSION.kas | /usr/bin/grep -v \\#pragma > $MISSION.kp\n\n        # produce the actual mission .h and .c files\n        ../../../tools/kas2c/kas2c $MISSION.kp $MISSION.c $MISSION.h $MISSION.func.c\n    done\n\n    # move the .h and .c files to the Generated folder\n    mv *.h *.c ../Generated\n\n    # clean up the intermediate .kp files\n    rm *.kp\n\n    # return to src/Missions root\n    cd ..\n\ndone";
+			shellScript = "# force the shell; XCode really likes sh regardless of configuration\n/bin/zsh\n\n# make sure that kas2c is compiled\ncd ../tools/kas2c\n./kas2c-MacOSX-compile.sh\n\n# now compile the *.kas mission files\ncd ../../src/Missions\n\nfor Y in SinglePlayer Tutorials\ndo\n    # change to the .kas folders in turn\n    cd $Y\n\n    for X in *.kas\n    do\n        # get the mission name\n        `/bin/echo $X | /usr/bin/awk -F '\\.' '{print \"export MISSION=\" $1}'`\n\n        # use gcc's preprocessor to produce the input for kas2c; the grep -v is\n        # to strip a gcc #pragma that kas2c cannot cope with\n        /usr/bin/gcc -E -x c $MISSION.kas | /usr/bin/grep -v \\#pragma > $MISSION.kp\n\n        # produce the actual mission .h and .c files\n        ../../../tools/kas2c/kas2c $MISSION.kp $MISSION.c $MISSION.h $MISSION.func.c\n    done\n\n    # move the .h and .c files to the Generated folder\n    mv *.h *.c ../Generated\n\n    # clean up the intermediate .kp files\n    rm *.kp\n\n    # return to src/Missions root\n    cd ..\n\ndone\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2995,7 +3034,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = "Raider Retreat.entitlements";
 				CODE_SIGN_IDENTITY = "-";
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -3006,7 +3047,8 @@
 					HW_GAME_RAIDER_RETREAT,
 				);
 				INFOPLIST_FILE = RaiderRetreat.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.homeworldsdl.raiderretreat;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hiigara-rr.homeworld";
 				PRODUCT_NAME = "Raider Retreat";
 				WRAPPER_EXTENSION = app;
 			};
@@ -3016,7 +3058,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = "Raider Retreat.entitlements";
 				CODE_SIGN_IDENTITY = "-";
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -3027,7 +3071,8 @@
 					HW_GAME_RAIDER_RETREAT,
 				);
 				INFOPLIST_FILE = RaiderRetreat.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.homeworldsdl.raiderretreat;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hiigara-rr.homeworld";
 				PRODUCT_NAME = "Raider Retreat";
 				WRAPPER_EXTENSION = app;
 			};
@@ -3037,12 +3082,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = "Raider Retreat.entitlements";
 				CODE_SIGN_IDENTITY = "-";
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.homeworldsdl.raiderretreat;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hiigara-rr.homeworld";
 			};
 			name = Default;
 		};
