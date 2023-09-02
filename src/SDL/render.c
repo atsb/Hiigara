@@ -1005,18 +1005,8 @@ flags |= SDL_WINDOW_FULLSCREEN_DESKTOP; // ATSB: This is put back to allow prope
 #endif
 
     SDL_GL_MakeCurrent(sdlwindow, glcontext);
-
-    // disable VSYNC
-    //SDL_GL_SetSwapInterval(0);
-
+    SDL_GL_SetSwapInterval(-1); // ATSB: This is dynamic vsync
 	SDL_ShowCursor(SDL_DISABLE);
-
-#ifdef _MACOSX_FIX_GL
-	if (!((flags & SDL_WINDOW_FULLSCREEN_DESKTOP)))
-    {
-		SDL_WM_GrabInput(SDL_GRAB_ON);
-    }
-#endif
 
 	lastWidth  = MAIN_WindowWidth;
 	lastHeight = MAIN_WindowHeight;
