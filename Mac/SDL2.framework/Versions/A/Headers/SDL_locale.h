@@ -1,6 +1,6 @@
 /*
   Simple DirectMedia Layer
-  Copyright (C) 1997-2021 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2023 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -28,10 +28,10 @@
 #ifndef _SDL_locale_h
 #define _SDL_locale_h
 
-#include "SDL_stdinc.h"
-#include "SDL_error.h"
+#include <SDL2/SDL_stdinc.h>
+#include <SDL2/SDL_error.h>
 
-#include "begin_code.h"
+#include <SDL2/begin_code.h>
 /* Set up for C function definitions, even when using C++ */
 #ifdef __cplusplus
 /* *INDENT-OFF* */
@@ -85,6 +85,8 @@ typedef struct SDL_Locale
  *
  * \return array of locales, terminated with a locale with a NULL language
  *         field. Will return NULL on error.
+ *
+ * \since This function is available since SDL 2.0.14.
  */
 extern DECLSPEC SDL_Locale * SDLCALL SDL_GetPreferredLocales(void);
 
@@ -94,7 +96,7 @@ extern DECLSPEC SDL_Locale * SDLCALL SDL_GetPreferredLocales(void);
 }
 /* *INDENT-ON* */
 #endif
-#include "close_code.h"
+#include <SDL2/close_code.h>
 
 #endif /* _SDL_locale_h */
 

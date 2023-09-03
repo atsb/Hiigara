@@ -1,6 +1,6 @@
 /*
   Simple DirectMedia Layer
-  Copyright (C) 1997-2021 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2023 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -22,13 +22,13 @@
 #ifndef SDL_shape_h_
 #define SDL_shape_h_
 
-#include "SDL_stdinc.h"
-#include "SDL_pixels.h"
-#include "SDL_rect.h"
-#include "SDL_surface.h"
-#include "SDL_video.h"
+#include <SDL2/SDL_stdinc.h>
+#include <SDL2/SDL_pixels.h>
+#include <SDL2/SDL_rect.h>
+#include <SDL2/SDL_surface.h>
+#include <SDL2/SDL_video.h>
 
-#include "begin_code.h"
+#include <SDL2/begin_code.h>
 /* Set up for C function definitions, even when using C++ */
 #ifdef __cplusplus
 extern "C" {
@@ -62,6 +62,8 @@ extern "C" {
  *              and ::SDL_WINDOW_FULLSCREEN is always unset.
  * \return the window created, or NULL if window creation failed.
  *
+ * \since This function is available since SDL 2.0.0.
+ *
  * \sa SDL_DestroyWindow
  */
 extern DECLSPEC SDL_Window * SDLCALL SDL_CreateShapedWindow(const char *title,unsigned int x,unsigned int y,unsigned int w,unsigned int h,Uint32 flags);
@@ -72,6 +74,8 @@ extern DECLSPEC SDL_Window * SDLCALL SDL_CreateShapedWindow(const char *title,un
  * \param window The window to query for being shaped.
  * \return SDL_TRUE if the window is a window that can be shaped, SDL_FALSE if
  *         the window is unshaped or NULL.
+ *
+ * \since This function is available since SDL 2.0.0.
  *
  * \sa SDL_CreateShapedWindow
  */
@@ -116,6 +120,8 @@ typedef struct SDL_WindowShapeMode {
  *         argument, or SDL_NONSHAPEABLE_WINDOW if the SDL_Window given does
  *         not reference a valid shaped window.
  *
+ * \since This function is available since SDL 2.0.0.
+ *
  * \sa SDL_WindowShapeMode
  * \sa SDL_GetShapedWindowMode
  */
@@ -133,6 +139,8 @@ extern DECLSPEC int SDLCALL SDL_SetWindowShape(SDL_Window *window,SDL_Surface *s
  *         window, or SDL_WINDOW_LACKS_SHAPE if the SDL_Window given is a
  *         shapeable window currently lacking a shape.
  *
+ * \since This function is available since SDL 2.0.0.
+ *
  * \sa SDL_WindowShapeMode
  * \sa SDL_SetWindowShape
  */
@@ -142,6 +150,6 @@ extern DECLSPEC int SDLCALL SDL_GetShapedWindowMode(SDL_Window *window,SDL_Windo
 #ifdef __cplusplus
 }
 #endif
-#include "close_code.h"
+#include <SDL2/close_code.h>
 
 #endif /* SDL_shape_h_ */

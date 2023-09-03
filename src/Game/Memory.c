@@ -303,7 +303,7 @@ void memPoolReset(mempool *pool, void *heapStart, sdword heapSize, bool bSmallHe
 #endif
 
     pool->wholePool = heapStart;
-    pool->pool = (ubyte *)(((memsize)((ubyte *)heapStart + sizeof(memcookie) - 1)) & (~(sizeof(memcookie) - 1)));
+    pool->pool = (ubyte *)(((uint64_t)((ubyte *)heapStart + sizeof(memcookie) - 1)) & (~(sizeof(memcookie) - 1)));
     pool->poolLength = pool->heapLength = heapSize;
 
     memInitCheck();
@@ -327,7 +327,7 @@ void memPoolReset(mempool *pool, void *heapStart, sdword heapSize, bool bSmallHe
             heap->validation = MEM_HeapValidation;
 #endif
             heap->blockSize = memSmallHeapInfo[index].blockSize;
-            heap->nBlocks = (sdword)((real32)memSmallHeapInfo[index].nBlocks * (real32)heapSize / (real32)MEM_HeapSizeDefault);
+            heap->nBlocks = (sdword)((real64)memSmallHeapInfo[index].nBlocks * (real64)heapSize / (real64)MEM_HeapSizeDefault);
             dbgAssertOrIgnore(heap->nBlocks != 0);
             listInit(&heap->allocated);
             listInit(&heap->free);
@@ -362,7 +362,7 @@ void memPoolReset(mempool *pool, void *heapStart, sdword heapSize, bool bSmallHe
 #endif //MEM_SMALL_BLOCK_HEAP
     }
     //set pointer to first free memory cookie
-    pool->first = pool->firstFree = (memcookie *)memRoundUp((memsize)poolData);
+    pool->first = pool->firstFree = (memcookie *)memRoundUp((uint64_t)poolData);
     //get length of newly sized pool
     pool->heapLength = memRoundDown(pool->pool + pool->poolLength - (ubyte *)pool->first);
     dbgAssertOrIgnore(pool->heapLength > 1);

@@ -1,6 +1,6 @@
 /*
   Simple DirectMedia Layer
-  Copyright (C) 1997-2021 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2023 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -28,10 +28,84 @@
  *  Functions to provide thread synchronization primitives.
  */
 
-#include "SDL_stdinc.h"
-#include "SDL_error.h"
+#include <SDL2/SDL_stdinc.h>
+#include <SDL2/SDL_error.h>
 
-#include "begin_code.h"
+/******************************************************************************/
+/* Enable thread safety attributes only with clang.
+ * The attributes can be safely erased when compiling with other compilers.
+ */
+#if defined(SDL_THREAD_SAFETY_ANALYSIS) && \
+    defined(__clang__) && (!defined(SWIG))
+#define SDL_THREAD_ANNOTATION_ATTRIBUTE__(x)   __attribute__((x))
+#else
+#define SDL_THREAD_ANNOTATION_ATTRIBUTE__(x)   /* no-op */
+#endif
+
+#define SDL_CAPABILITY(x) \
+  SDL_THREAD_ANNOTATION_ATTRIBUTE__(capability(x))
+
+#define SDL_SCOPED_CAPABILITY \
+  SDL_THREAD_ANNOTATION_ATTRIBUTE__(scoped_lockable)
+
+#define SDL_GUARDED_BY(x) \
+  SDL_THREAD_ANNOTATION_ATTRIBUTE__(guarded_by(x))
+
+#define SDL_PT_GUARDED_BY(x) \
+  SDL_THREAD_ANNOTATION_ATTRIBUTE__(pt_guarded_by(x))
+
+#define SDL_ACQUIRED_BEFORE(x) \
+  SDL_THREAD_ANNOTATION_ATTRIBUTE__(acquired_before(x))
+
+#define SDL_ACQUIRED_AFTER(x) \
+  SDL_THREAD_ANNOTATION_ATTRIBUTE__(acquired_after(x))
+
+#define SDL_REQUIRES(x) \
+  SDL_THREAD_ANNOTATION_ATTRIBUTE__(requires_capability(x))
+
+#define SDL_REQUIRES_SHARED(x) \
+  SDL_THREAD_ANNOTATION_ATTRIBUTE__(requires_shared_capability(x))
+
+#define SDL_ACQUIRE(x) \
+  SDL_THREAD_ANNOTATION_ATTRIBUTE__(acquire_capability(x))
+
+#define SDL_ACQUIRE_SHARED(x) \
+  SDL_THREAD_ANNOTATION_ATTRIBUTE__(acquire_shared_capability(x))
+
+#define SDL_RELEASE(x) \
+  SDL_THREAD_ANNOTATION_ATTRIBUTE__(release_capability(x))
+
+#define SDL_RELEASE_SHARED(x) \
+  SDL_THREAD_ANNOTATION_ATTRIBUTE__(release_shared_capability(x))
+
+#define SDL_RELEASE_GENERIC(x) \
+  SDL_THREAD_ANNOTATION_ATTRIBUTE__(release_generic_capability(x))
+
+#define SDL_TRY_ACQUIRE(x, y) \
+  SDL_THREAD_ANNOTATION_ATTRIBUTE__(try_acquire_capability(x, y))
+
+#define SDL_TRY_ACQUIRE_SHARED(x, y) \
+  SDL_THREAD_ANNOTATION_ATTRIBUTE__(try_acquire_shared_capability(x, y))
+
+#define SDL_EXCLUDES(x) \
+  SDL_THREAD_ANNOTATION_ATTRIBUTE__(locks_excluded(x))
+
+#define SDL_ASSERT_CAPABILITY(x) \
+  SDL_THREAD_ANNOTATION_ATTRIBUTE__(assert_capability(x))
+
+#define SDL_ASSERT_SHARED_CAPABILITY(x) \
+  SDL_THREAD_ANNOTATION_ATTRIBUTE__(assert_shared_capability(x))
+
+#define SDL_RETURN_CAPABILITY(x) \
+  SDL_THREAD_ANNOTATION_ATTRIBUTE__(lock_returned(x))
+
+#define SDL_NO_THREAD_SAFETY_ANALYSIS \
+  SDL_THREAD_ANNOTATION_ATTRIBUTE__(no_thread_safety_analysis)
+
+/******************************************************************************/
+
+
+#include <SDL2/begin_code.h>
 /* Set up for C function definitions, even when using C++ */
 #ifdef __cplusplus
 extern "C" {
@@ -71,6 +145,8 @@ typedef struct SDL_mutex SDL_mutex;
  * \returns the initialized and unlocked mutex or NULL on failure; call
  *          SDL_GetError() for more information.
  *
+ * \since This function is available since SDL 2.0.0.
+ *
  * \sa SDL_DestroyMutex
  * \sa SDL_LockMutex
  * \sa SDL_TryLockMutex
@@ -91,8 +167,10 @@ extern DECLSPEC SDL_mutex *SDLCALL SDL_CreateMutex(void);
  *
  * \param mutex the mutex to lock
  * \return 0, or -1 on error.
+ *
+ * \since This function is available since SDL 2.0.0.
  */
-extern DECLSPEC int SDLCALL SDL_LockMutex(SDL_mutex * mutex);
+extern DECLSPEC int SDLCALL SDL_LockMutex(SDL_mutex * mutex) SDL_ACQUIRE(mutex);
 #define SDL_mutexP(m)   SDL_LockMutex(m)
 
 /**
@@ -108,12 +186,14 @@ extern DECLSPEC int SDLCALL SDL_LockMutex(SDL_mutex * mutex);
  * \returns 0, `SDL_MUTEX_TIMEDOUT`, or -1 on error; call SDL_GetError() for
  *          more information.
  *
+ * \since This function is available since SDL 2.0.0.
+ *
  * \sa SDL_CreateMutex
  * \sa SDL_DestroyMutex
  * \sa SDL_LockMutex
  * \sa SDL_UnlockMutex
  */
-extern DECLSPEC int SDLCALL SDL_TryLockMutex(SDL_mutex * mutex);
+extern DECLSPEC int SDLCALL SDL_TryLockMutex(SDL_mutex * mutex) SDL_TRY_ACQUIRE(0, mutex);
 
 /**
  * Unlock the mutex.
@@ -129,8 +209,10 @@ extern DECLSPEC int SDLCALL SDL_TryLockMutex(SDL_mutex * mutex);
  *
  * \param mutex the mutex to unlock.
  * \returns 0, or -1 on error.
+ *
+ * \since This function is available since SDL 2.0.0.
  */
-extern DECLSPEC int SDLCALL SDL_UnlockMutex(SDL_mutex * mutex);
+extern DECLSPEC int SDLCALL SDL_UnlockMutex(SDL_mutex * mutex) SDL_RELEASE(mutex);
 #define SDL_mutexV(m)   SDL_UnlockMutex(m)
 
 /**
@@ -143,6 +225,8 @@ extern DECLSPEC int SDLCALL SDL_UnlockMutex(SDL_mutex * mutex);
  * on the platform.
  *
  * \param mutex the mutex to destroy
+ *
+ * \since This function is available since SDL 2.0.0.
  *
  * \sa SDL_CreateMutex
  * \sa SDL_LockMutex
@@ -176,6 +260,8 @@ typedef struct SDL_semaphore SDL_sem;
  * \returns a new semaphore or NULL on failure; call SDL_GetError() for more
  *          information.
  *
+ * \since This function is available since SDL 2.0.0.
+ *
  * \sa SDL_DestroySemaphore
  * \sa SDL_SemPost
  * \sa SDL_SemTryWait
@@ -192,6 +278,8 @@ extern DECLSPEC SDL_sem *SDLCALL SDL_CreateSemaphore(Uint32 initial_value);
  * waiting on it.
  *
  * \param sem the semaphore to destroy
+ *
+ * \since This function is available since SDL 2.0.0.
  *
  * \sa SDL_CreateSemaphore
  * \sa SDL_SemPost
@@ -217,6 +305,8 @@ extern DECLSPEC void SDLCALL SDL_DestroySemaphore(SDL_sem * sem);
  * \returns 0 on success or a negative error code on failure; call
  *          SDL_GetError() for more information.
  *
+ * \since This function is available since SDL 2.0.0.
+ *
  * \sa SDL_CreateSemaphore
  * \sa SDL_DestroySemaphore
  * \sa SDL_SemPost
@@ -240,6 +330,8 @@ extern DECLSPEC int SDLCALL SDL_SemWait(SDL_sem * sem);
  *          block, or a negative error code on failure; call SDL_GetError()
  *          for more information.
  *
+ * \since This function is available since SDL 2.0.0.
+ *
  * \sa SDL_CreateSemaphore
  * \sa SDL_DestroySemaphore
  * \sa SDL_SemPost
@@ -258,10 +350,12 @@ extern DECLSPEC int SDLCALL SDL_SemTryWait(SDL_sem * sem);
  * successful it will atomically decrement the semaphore value.
  *
  * \param sem the semaphore to wait on
- * \param ms the length of the timeout, in milliseconds
+ * \param timeout the length of the timeout, in milliseconds
  * \returns 0 if the wait succeeds, `SDL_MUTEX_TIMEDOUT` if the wait does not
  *          succeed in the allotted time, or a negative error code on failure;
  *          call SDL_GetError() for more information.
+ *
+ * \since This function is available since SDL 2.0.0.
  *
  * \sa SDL_CreateSemaphore
  * \sa SDL_DestroySemaphore
@@ -270,7 +364,7 @@ extern DECLSPEC int SDLCALL SDL_SemTryWait(SDL_sem * sem);
  * \sa SDL_SemValue
  * \sa SDL_SemWait
  */
-extern DECLSPEC int SDLCALL SDL_SemWaitTimeout(SDL_sem * sem, Uint32 ms);
+extern DECLSPEC int SDLCALL SDL_SemWaitTimeout(SDL_sem *sem, Uint32 timeout);
 
 /**
  * Atomically increment a semaphore's value and wake waiting threads.
@@ -278,6 +372,8 @@ extern DECLSPEC int SDLCALL SDL_SemWaitTimeout(SDL_sem * sem, Uint32 ms);
  * \param sem the semaphore to increment
  * \returns 0 on success or a negative error code on failure; call
  *          SDL_GetError() for more information.
+ *
+ * \since This function is available since SDL 2.0.0.
  *
  * \sa SDL_CreateSemaphore
  * \sa SDL_DestroySemaphore
@@ -293,6 +389,8 @@ extern DECLSPEC int SDLCALL SDL_SemPost(SDL_sem * sem);
  *
  * \param sem the semaphore to query
  * \returns the current value of the semaphore.
+ *
+ * \since This function is available since SDL 2.0.0.
  *
  * \sa SDL_CreateSemaphore
  */
@@ -316,6 +414,8 @@ typedef struct SDL_cond SDL_cond;
  * \returns a new condition variable or NULL on failure; call SDL_GetError()
  *          for more information.
  *
+ * \since This function is available since SDL 2.0.0.
+ *
  * \sa SDL_CondBroadcast
  * \sa SDL_CondSignal
  * \sa SDL_CondWait
@@ -328,6 +428,8 @@ extern DECLSPEC SDL_cond *SDLCALL SDL_CreateCond(void);
  * Destroy a condition variable.
  *
  * \param cond the condition variable to destroy
+ *
+ * \since This function is available since SDL 2.0.0.
  *
  * \sa SDL_CondBroadcast
  * \sa SDL_CondSignal
@@ -344,6 +446,8 @@ extern DECLSPEC void SDLCALL SDL_DestroyCond(SDL_cond * cond);
  * \returns 0 on success or a negative error code on failure; call
  *          SDL_GetError() for more information.
  *
+ * \since This function is available since SDL 2.0.0.
+ *
  * \sa SDL_CondBroadcast
  * \sa SDL_CondWait
  * \sa SDL_CondWaitTimeout
@@ -358,6 +462,8 @@ extern DECLSPEC int SDLCALL SDL_CondSignal(SDL_cond * cond);
  * \param cond the condition variable to signal
  * \returns 0 on success or a negative error code on failure; call
  *          SDL_GetError() for more information.
+ *
+ * \since This function is available since SDL 2.0.0.
  *
  * \sa SDL_CondSignal
  * \sa SDL_CondWait
@@ -384,6 +490,8 @@ extern DECLSPEC int SDLCALL SDL_CondBroadcast(SDL_cond * cond);
  * \param mutex the mutex used to coordinate thread access
  * \returns 0 when it is signaled or a negative error code on failure; call
  *          SDL_GetError() for more information.
+ *
+ * \since This function is available since SDL 2.0.0.
  *
  * \sa SDL_CondBroadcast
  * \sa SDL_CondSignal
@@ -412,6 +520,8 @@ extern DECLSPEC int SDLCALL SDL_CondWait(SDL_cond * cond, SDL_mutex * mutex);
  *          the condition is not signaled in the allotted time, or a negative
  *          error code on failure; call SDL_GetError() for more information.
  *
+ * \since This function is available since SDL 2.0.0.
+ *
  * \sa SDL_CondBroadcast
  * \sa SDL_CondSignal
  * \sa SDL_CondWait
@@ -428,7 +538,7 @@ extern DECLSPEC int SDLCALL SDL_CondWaitTimeout(SDL_cond * cond,
 #ifdef __cplusplus
 }
 #endif
-#include "close_code.h"
+#include <SDL2/close_code.h>
 
 #endif /* SDL_mutex_h_ */
 
