@@ -5,6 +5,11 @@ Hiigara is forked from Garden of Kadesh, a web assembly focused port.  Hiigara i
 
 Both ports originate from the original HomeworldSDL project that has since been abandoned.
 
+# NOTICE
+
+Hiigara is now officially deprecated in favour of Tenhauser Gate: https://gitlab.com/homeworldsdl/TenhauserGate/-/releases
+I have done the ARM64 and macOS ports for this port and it is therefore (with the enhancements of TG) better than Hiigara.  Use that port for your macOS needs :)
+
 # Data
 
 The Homeworld data is needed.  Either the latest 1.5 release or the remaster, both are supported and you won't need the 'plug.tga' relic icon as I have removed it (this icon isn't in the remaster data).
