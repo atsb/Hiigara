@@ -1,47 +1,16 @@
 # Hiigara
 Hiigara is a port of Homeworld that focuses on accuracy to the original across many operating systems.
 
-Hiigara is forked from Garden of Kadesh, a web assembly focused port.  Hiigara is heavily modified to be a desktop focused port.
+Hiigara is forked from Garden of Kadesh.
 
-Both ports originate from the original HomeworldSDL project that has since been abandoned.
+## New Notice
 
-# NOTICE
+Hiigara is back in action and reformed from Garden of Kadesh (with most of their contributions removed) back into Hiigara.
 
-Hiigara is now officially deprecated in favour of Tenhauser Gate: https://gitlab.com/homeworldsdl/TenhauserGate/-/releases
-I have done the ARM64 and macOS ports for this port and it is therefore (with the enhancements of TG) better than Hiigara.  Use that port for your macOS needs :)
+This happened due to the disastrous project management of that port and lack of respect to technical accuracy, consistency and stability.
 
-# Data
+## So What Now
 
-The Homeworld data is needed.  Either the latest 1.5 release or the remaster, both are supported and you won't need the 'plug.tga' relic icon as I have removed it (this icon isn't in the remaster data).
+Hiigara is rising from those ashes to be 'the' Homeward port, how?  Being free from shackles impeding our technical brilliance, Hiigara 2.0 will be ready soon, and when it drops, so will your jaw.  Not only better effects, new rendering systems and platform support but it will be open for 'everyone' to contribute, assuming you are technically knowledgeable, technically able and technically sound.  No project managers here!  Just developers who love Homeworld!
 
-Linux users, place the data in the same directory as your binary.
-macOS users, place the data in the 'Resources' directory inside the App Bundle.
-
-# Data files you need
-
-Homeworld.big
-HW_Comp.vce
-HW_Music.wxd
-Update.big
-Extra.big
-
-Please also include the HomeworldSDL.big file where it is as this is needed for 64bit support.
-This file modifies the pointers from the Homeworld.big file that aren't 64bit clean (and cannot be since it is a proprietary commercial file).
-
-# Building
-
-Linux users should perform
-
-1. ./configure
-2. Enter the tools directory and build biggie using the scripts
-3. Enter the Linux directory and execute the bootstrap script
-4. Use the Makefile that is then created in the root directory
-
-macOS users should perform
-
-1. Open the provided xcode project
-2. Build the project
-
-NOTE: macOS users, A universal SDL2.framework is already provided in the Mac directory.  You do not need anything else.
-
-Enjoy using Hiigara as much as I did porting it.
+Stay focused folks!
