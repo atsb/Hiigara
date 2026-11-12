@@ -1,11 +1,11 @@
 # Hiigara
 Hiigara is a port of Homeworld that focuses on accuracy to the original across many operating systems.
 
-Hiigara is forked from Garden of Kadesh.
+Hiigara is originally forked from an early Garden of Kadesh build.
 
 ## New Notice
 
-Hiigara is back in action and reformed from Garden of Kadesh (with most of their contributions removed) back into Hiigara.
+Hiigara is back in action and forked from Garden of Kadesh (with most of their contributions removed) back into Hiigara.
 
 This happened due to the disastrous project management of that port and lack of respect to technical accuracy, consistency and stability.
 
